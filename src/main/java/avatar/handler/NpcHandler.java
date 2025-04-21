@@ -162,7 +162,7 @@ public class NpcHandler {
                 us.getAvatarService().openMenuOption(npcId, 0, listmenuboss);
             }
             if (boss.getUsername() == "onggianoel") {
-                us.getAvatarService().serverDialog("bình tĩnh ông cháu");
+                us.getAvatarService().serverDialog("bình tĩnh ông cháu ơi");
                 return;
             }
             if (boss.isDefeated()) {
