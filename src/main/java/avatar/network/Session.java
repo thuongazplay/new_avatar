@@ -940,7 +940,7 @@ public class Session implements ISession {
                                         user.getAvatarService().sendTextBoxPopup(user.getId(), 9, "thoi tiet", 1);
                                     }).build(),
                                     Menu.builder().name("Bảo trì").action(() -> {
-                                        user.getAvatarService().sendTextBoxPopup(user.getId(), 10, "Bảo trì", 1);
+                                        user.getAvatarService().sendTextBoxPopup(user.getId(), 98, "Bảo trì", 1);
                                     }).build(),
                                     Menu.builder().name("infor").action(() -> {
                                         user.getAvatarService().sendTextBoxPopup(user.getId(), 11, "infor", 1);
