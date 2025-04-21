@@ -1,0 +1,265 @@
+2025-04-10 14:32:48 - xu load :20000
+2025-04-10 14:32:48 - luong load :0
+2025-04-10 14:33:33 - luong : 10000
+2025-04-10 15:19:22 - xu load :100020000
+2025-04-10 15:19:22 - luong load :10000
+2025-04-10 15:22:17 - xu load :100020000
+2025-04-10 15:22:17 - luong load :10000
+2025-04-10 15:22:26 - luong : 10000
+2025-04-10 15:22:29 - luong : 10000
+2025-04-10 15:22:31 - luong : 10000
+2025-04-10 15:22:34 - luong : 10000
+2025-04-10 15:22:37 - luong : 9800
+2025-04-10 15:22:42 - luong : 9300
+2025-04-10 15:22:45 - luong : 8700
+2025-04-10 15:22:48 - luong : 8000
+2025-04-10 15:22:51 - luong : 7000
+2025-04-10 15:23:30 - xu load :98280000
+2025-04-10 15:23:30 - luong load :7000
+2025-04-10 15:27:13 - luong : 5000
+2025-04-10 18:19:54 - xu load :98030000
+2025-04-10 18:19:54 - luong load :5000
+2025-04-10 18:20:19 - addItemToChests error 20 Item Thẻ VIP(7 ngày)
+2025-04-10 18:20:44 - FindItemInChests bug 20 Item Thẻ VIP(7 ngày)
+2025-04-10 18:20:44 - FindItemInChests bug 20 Item Thẻ VIP(7 ngày)
+2025-04-10 18:20:44 - removeItem error 20 Item Thẻ VIP(7 ngày)
+2025-04-10 18:20:44 - luong : 5000
+2025-04-10 18:20:56 - FindItemInChests bug 19 Item Thẻ VIP(7 ngày)
+2025-04-10 18:20:56 - FindItemInChests bug 19 Item Thẻ VIP(7 ngày)
+2025-04-10 18:20:56 - removeItem error 19 Item Thẻ VIP(7 ngày)
+2025-04-10 18:20:56 - luong : 5000
+2025-04-10 18:21:25 - saveData errorThẻ VIP(7 ngày) 18 Item Thẻ VIP(7 ngày)
+2025-04-10 18:36:51 - xu load :98030000
+2025-04-10 18:36:51 - luong load :5000
+2025-04-10 18:37:11 - FindItemInChests bug 18 Item Thẻ VIP(7 ngày)
+2025-04-10 18:37:11 - FindItemInChests bug 18 Item Thẻ VIP(7 ngày)
+2025-04-10 18:37:11 - removeItem error 18 Item Thẻ VIP(7 ngày)
+2025-04-10 18:37:11 - luong : 5000
+2025-04-10 18:37:13 - FindItemInChests bug 17 Item Thẻ VIP(7 ngày)
+2025-04-10 18:37:13 - FindItemInChests bug 17 Item Thẻ VIP(7 ngày)
+2025-04-10 18:37:13 - removeItem error 17 Item Thẻ VIP(7 ngày)
+2025-04-10 18:37:13 - luong : 5000
+2025-04-10 18:37:15 - FindItemInChests bug 16 Item Thẻ VIP(7 ngày)
+2025-04-10 18:37:15 - FindItemInChests bug 16 Item Thẻ VIP(7 ngày)
+2025-04-10 18:37:15 - removeItem error 16 Item Thẻ VIP(7 ngày)
+2025-04-10 18:37:15 - luong : 5000
+2025-04-10 18:37:17 - FindItemInChests bug 15 Item Thẻ VIP(7 ngày)
+2025-04-10 18:37:17 - FindItemInChests bug 15 Item Thẻ VIP(7 ngày)
+2025-04-10 18:37:17 - removeItem error 15 Item Thẻ VIP(7 ngày)
+2025-04-10 18:37:17 - luong : 5000
+2025-04-10 18:37:20 - FindItemInChests bug 14 Item Thẻ VIP(7 ngày)
+2025-04-10 18:37:20 - FindItemInChests bug 14 Item Thẻ VIP(7 ngày)
+2025-04-10 18:37:20 - removeItem error 14 Item Thẻ VIP(7 ngày)
+2025-04-10 18:37:20 - luong : 5000
+2025-04-10 18:37:40 - FindItemInChests bug 13 Item Thẻ VIP(7 ngày)
+2025-04-10 18:37:40 - FindItemInChests bug 13 Item Thẻ VIP(7 ngày)
+2025-04-10 18:37:40 - removeItem error 13 Item Thẻ VIP(7 ngày)
+2025-04-10 18:37:40 - luong : 5000
+2025-04-10 18:37:42 - FindItemInChests bug 12 Item Thẻ VIP(7 ngày)
+2025-04-10 18:37:42 - FindItemInChests bug 12 Item Thẻ VIP(7 ngày)
+2025-04-10 18:37:42 - removeItem error 12 Item Thẻ VIP(7 ngày)
+2025-04-10 18:37:42 - luong : 5000
+2025-04-10 18:37:44 - FindItemInChests bug 11 Item Thẻ VIP(7 ngày)
+2025-04-10 18:37:44 - FindItemInChests bug 11 Item Thẻ VIP(7 ngày)
+2025-04-10 18:37:44 - removeItem error 11 Item Thẻ VIP(7 ngày)
+2025-04-10 18:37:44 - luong : 5000
+2025-04-10 18:37:46 - FindItemInChests bug 10 Item Thẻ VIP(7 ngày)
+2025-04-10 18:37:46 - FindItemInChests bug 10 Item Thẻ VIP(7 ngày)
+2025-04-10 18:37:46 - removeItem error 10 Item Thẻ VIP(7 ngày)
+2025-04-10 18:37:46 - luong : 5000
+2025-04-10 18:37:48 - FindItemInChests bug 9 Item Thẻ VIP(7 ngày)
+2025-04-10 18:37:48 - FindItemInChests bug 9 Item Thẻ VIP(7 ngày)
+2025-04-10 18:37:48 - removeItem error 9 Item Thẻ VIP(7 ngày)
+2025-04-10 18:37:48 - luong : 5000
+2025-04-10 18:37:52 - FindItemInChests bug 8 Item Thẻ VIP(7 ngày)
+2025-04-10 18:37:52 - FindItemInChests bug 8 Item Thẻ VIP(7 ngày)
+2025-04-10 18:37:52 - removeItem error 8 Item Thẻ VIP(7 ngày)
+2025-04-10 18:37:52 - luong : 5000
+2025-04-10 18:38:10 - FindItemInChests bug 7 Item Thẻ VIP(7 ngày)
+2025-04-10 18:41:29 - saveData errorThẻ VIP(7 ngày) 7 Item Thẻ VIP(7 ngày)
+2025-04-10 18:59:55 - xu load :98030000
+2025-04-10 18:59:55 - luong load :5000
+2025-04-10 19:00:09 - FindItemInChests bug 7 Item Thẻ VIP(7 ngày)
+2025-04-10 19:00:09 - FindItemInChests bug 7 Item Thẻ VIP(7 ngày)
+2025-04-10 19:00:09 - removeItem error 7 Item Thẻ VIP(7 ngày)
+2025-04-10 19:00:09 - luong : 5000
+2025-04-10 19:00:25 - saveData errorThẻ VIP(7 ngày) 6 Item Thẻ VIP(7 ngày)
+2025-04-10 19:00:29 - xu load :98030000
+2025-04-10 19:00:29 - luong load :5000
+2025-04-10 19:01:18 - nobita cuoc 50000000 Xu vào Tài.
+2025-04-10 19:01:55 - Chúc mừng nobita! Bạn đã thắng cược và nhận được 95000000 Xu. 5, 3, 4 12 Tài
+2025-04-10 19:01:55 - tiền XU tx:143030000Lượng tx5000
+2025-04-10 19:02:16 - luong : 0
+2025-04-10 19:02:16 - nobita cuoc 5000 Lượng vào Xỉu.
+2025-04-10 19:02:41 - luong : 9500
+2025-04-10 19:02:41 - Chúc mừng nobita! Bạn đã thắng cược và nhận được 9500 Lượng. 2, 3, 3 8 Xỉu
+2025-04-10 19:02:41 - tiền XU tx:143030000Lượng tx9500
+2025-04-10 19:03:09 - saveData errorThẻ VIP(7 ngày) 6 Item Thẻ VIP(7 ngày)
+2025-04-11 06:59:39 - xu load :143030000
+2025-04-11 06:59:39 - luong load :9500
+2025-04-11 07:00:06 - nobita cuoc 5000000 Xu vào Xỉu.
+2025-04-11 07:00:13 - Rất tiếc, nobita, bạn đã thua cược. 6, 6, 4 16 Tài
+2025-04-11 07:00:13 - tiền XU tx:138030000Lượng tx9500
+2025-04-11 07:00:40 - nobita cuoc 50000000 Xu vào Tài.
+2025-04-11 07:00:59 - Chúc mừng nobita! Bạn đã thắng cược và nhận được 95000000 Xu. 4, 5, 3 12 Tài
+2025-04-11 07:00:59 - tiền XU tx:183030000Lượng tx9500
+2025-04-11 07:01:41 - nobita cuoc 50000000 Xu vào Xỉu.
+2025-04-11 07:01:45 - Rất tiếc, nobita, bạn đã thua cược. 6, 4, 4 14 Tài
+2025-04-11 07:01:45 - tiền XU tx:133030000Lượng tx9500
+2025-04-11 07:02:06 - nobita cuoc 50000000 Xu vào Tài.
+2025-04-11 07:02:31 - Rất tiếc, nobita, bạn đã thua cược. 3, 3, 2 8 Xỉu
+2025-04-11 07:02:31 - tiền XU tx:83030000Lượng tx9500
+2025-04-11 07:03:07 - nobita cuoc 50000000 Xu vào Xỉu.
+2025-04-11 07:03:17 - Chúc mừng nobita! Bạn đã thắng cược và nhận được 95000000 Xu. 3, 1, 5 9 Xỉu
+2025-04-11 07:03:17 - tiền XU tx:128030000Lượng tx9500
+2025-04-11 07:03:56 - nobita cuoc 50000000 Xu vào Tài.
+2025-04-11 07:04:04 - Chúc mừng nobita! Bạn đã thắng cược và nhận được 95000000 Xu. 6, 6, 3 15 Tài
+2025-04-11 07:04:04 - tiền XU tx:173030000Lượng tx9500
+2025-04-11 07:04:28 - nobita cuoc 25000000 Xu vào Tài.
+2025-04-11 07:04:50 - Rất tiếc, nobita, bạn đã thua cược. 4, 1, 4 9 Xỉu
+2025-04-11 07:04:50 - tiền XU tx:148030000Lượng tx9500
+2025-04-11 07:05:15 - nobita cuoc 25000000 Xu vào Xỉu.
+2025-04-11 07:05:36 - Chúc mừng nobita! Bạn đã thắng cược và nhận được 47500000 Xu. 4, 2, 3 9 Xỉu
+2025-04-11 07:05:36 - tiền XU tx:170530000Lượng tx9500
+2025-04-11 07:06:01 - nobita cuoc 50000000 Xu vào Tài.
+2025-04-11 07:06:22 - Rất tiếc, nobita, bạn đã thua cược. 1, 4, 5 10 Xỉu
+2025-04-11 07:06:22 - tiền XU tx:120530000Lượng tx9500
+2025-04-11 07:07:02 - nobita cuoc 50000000 Xu vào Xỉu.
+2025-04-11 07:07:08 - Rất tiếc, nobita, bạn đã thua cược. 6, 2, 5 13 Tài
+2025-04-11 07:07:08 - tiền XU tx:70530000Lượng tx9500
+2025-04-11 07:07:25 - nobita cuoc 50000000 Xu vào Tài.
+2025-04-11 07:07:54 - Chúc mừng nobita! Bạn đã thắng cược và nhận được 95000000 Xu. 4, 1, 6 11 Tài
+2025-04-11 07:07:54 - tiền XU tx:115530000Lượng tx9500
+2025-04-11 07:08:12 - nobita cuoc 50000000 Xu vào Xỉu.
+2025-04-11 07:08:40 - Rất tiếc, nobita, bạn đã thua cược. 6, 3, 2 11 Tài
+2025-04-11 07:08:40 - tiền XU tx:65530000Lượng tx9500
+2025-04-11 07:09:01 - nobita cuoc 50000000 Xu vào Tài.
+2025-04-11 07:09:26 - Chúc mừng nobita! Bạn đã thắng cược và nhận được 95000000 Xu. 5, 3, 6 14 Tài
+2025-04-11 07:09:26 - tiền XU tx:110530000Lượng tx9500
+2025-04-11 07:09:39 - nobita cuoc 50000000 Xu vào Tài.
+2025-04-11 07:10:12 - Chúc mừng nobita! Bạn đã thắng cược và nhận được 95000000 Xu. 3, 3, 6 12 Tài
+2025-04-11 07:10:12 - tiền XU tx:155530000Lượng tx9500
+2025-04-11 07:10:47 - nobita cuoc 43000000 Xu vào Tài.
+2025-04-11 07:11:00 - Chúc mừng nobita! Bạn đã thắng cược và nhận được 81700000 Xu. 3, 2, 6 11 Tài
+2025-04-11 07:11:00 - tiền XU tx:194230000Lượng tx9500
+2025-04-11 07:11:17 - nobita cuoc 6000000 Xu vào Tài.
+2025-04-11 07:11:25 - saveData errorThẻ VIP(7 ngày) 6 Item Thẻ VIP(7 ngày)
+2025-04-11 07:11:30 - xu load :188230000
+2025-04-11 07:11:30 - luong load :9500
+2025-04-11 07:11:47 - Rất tiếc, nobita, bạn đã thua cược. 4, 5, 1 10 Xỉu
+2025-04-11 07:11:47 - tiền XU tx:188230000Lượng tx9500
+2025-04-11 07:12:31 - luong : 4500
+2025-04-11 07:12:31 - nobita cuoc 5000 Lượng vào Xỉu.
+2025-04-11 07:12:33 - Rất tiếc, nobita, bạn đã thua cược. 4, 4, 5 13 Tài
+2025-04-11 07:12:33 - tiền XU tx:188230000Lượng tx4500
+2025-04-11 07:13:00 - nobita cuoc 50000000 Xu vào Tài.
+2025-04-11 07:13:20 - Rất tiếc, nobita, bạn đã thua cược. 1, 2, 4 7 Xỉu
+2025-04-11 07:13:20 - tiền XU tx:138230000Lượng tx4500
+2025-04-11 07:13:39 - nobita cuoc 50000000 Xu vào Tài.
+2025-04-11 07:14:06 - Chúc mừng nobita! Bạn đã thắng cược và nhận được 95000000 Xu. 2, 4, 5 11 Tài
+2025-04-11 07:14:06 - tiền XU tx:183230000Lượng tx4500
+2025-04-11 07:14:34 - nobita cuoc 50000000 Xu vào Xỉu.
+2025-04-11 07:14:52 - Chúc mừng nobita! Bạn đã thắng cược và nhận được 95000000 Xu. 6, 1, 2 9 Xỉu
+2025-04-11 07:14:52 - tiền XU tx:228230000Lượng tx4500
+2025-04-11 07:15:12 - saveData errorThẻ VIP(7 ngày) 6 Item Thẻ VIP(7 ngày)
+2025-04-11 07:15:17 - xu load :228230000
+2025-04-11 07:15:17 - luong load :4500
+2025-04-11 07:15:51 - nobita cuoc 5 Xu vào Tài.
+2025-04-11 07:16:24 - Rất tiếc, nobita, bạn đã thua cược. 1, 3, 1 5 Xỉu
+2025-04-11 07:16:24 - tiền XU tx:228229995Lượng tx4500
+2025-04-11 07:17:00 - nobita cuoc 28000000 Xu vào Tài.
+2025-04-11 07:17:10 - Chúc mừng nobita! Bạn đã thắng cược và nhận được 53200000 Xu. 3, 4, 4 11 Tài
+2025-04-11 07:17:10 - tiền XU tx:253429995Lượng tx4500
+2025-04-11 07:17:45 - nobita cuoc 28000000 Xu vào Tài.
+2025-04-11 07:17:56 - Rất tiếc, nobita, bạn đã thua cược. 1, 2, 2 5 Xỉu
+2025-04-11 07:17:56 - tiền XU tx:225429995Lượng tx4500
+2025-04-11 07:18:09 - nobita cuoc 50000000 Xu vào Tài.
+2025-04-11 07:18:15 - saveData errorThẻ VIP(7 ngày) 6 Item Thẻ VIP(7 ngày)
+2025-04-11 07:18:20 - xu load :175429995
+2025-04-11 07:18:20 - luong load :4500
+2025-04-11 07:18:42 - Rất tiếc, nobita, bạn đã thua cược. 3, 2, 3 8 Xỉu
+2025-04-11 07:18:42 - tiền XU tx:175429995Lượng tx4500
+2025-04-11 07:19:05 - saveData errorThẻ VIP(7 ngày) 6 Item Thẻ VIP(7 ngày)
+2025-04-11 12:06:28 - xu load :175429995
+2025-04-11 12:06:28 - luong load :4500
+2025-04-11 12:06:44 - nobita cuoc 50000000 Xu vào Tài.
+2025-04-11 12:06:48 - Chúc mừng nobita! Bạn đã thắng cược và nhận được 95000000 Xu. 6, 2, 5 13 Tài
+2025-04-11 12:06:48 - tiền XU tx:220429995Lượng tx4500
+2025-04-11 12:08:16 - nobita cuoc 50000000 Xu vào Xỉu.
+2025-04-11 12:08:20 - Rất tiếc, nobita, bạn đã thua cược. 6, 5, 1 12 Tài
+2025-04-11 12:08:20 - tiền XU tx:170429995Lượng tx4500
+2025-04-11 12:08:41 - nobita cuoc 50000000 Xu vào Xỉu.
+2025-04-11 12:08:48 - saveData errorThẻ VIP(7 ngày) 6 Item Thẻ VIP(7 ngày)
+2025-04-11 12:09:08 - xu load :120429995
+2025-04-11 12:09:08 - luong load :4500
+2025-04-11 12:09:38 - nobita cuoc 50000000 Xu vào Tài.
+2025-04-11 12:09:52 - Rất tiếc, nobita, bạn đã thua cược. 3, 4, 2 9 Xỉu
+2025-04-11 12:09:52 - tiền XU tx:70429995Lượng tx4500
+2025-04-11 12:10:01 - saveData errorThẻ VIP(7 ngày) 6 Item Thẻ VIP(7 ngày)
+2025-04-11 20:34:13 - xu load :70429995
+2025-04-11 20:34:13 - luong load :4500
+2025-04-11 20:34:49 - nobita cuoc 50000000 Xu vào Xỉu.
+2025-04-11 20:34:56 - Rất tiếc, nobita, bạn đã thua cược. 4, 1, 6 11 Tài
+2025-04-11 20:34:56 - tiền XU tx:20429995Lượng tx4500
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 20321995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 20213995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 20105995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 19997995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 19889995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 19781995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 19673995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 19565995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 19457995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 19349995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 19241995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 19133995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 19025995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 18917995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 18809995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 18701995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 18593995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 18485995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 18377995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 18269995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 18161995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 18053995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 17945995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 17837995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 17729995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 17621995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 17513995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 17405995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 17297995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 17189995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 17081995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 16973995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 16865995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 16757995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 16649995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 16541995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 16433995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 16325995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 16217995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 16109995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 16001995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 15893995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 15785995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 15677995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 15569995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 15461995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 15353995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 15245995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 15137995
+2025-04-11 20:35:25 - xu Nâng Cấp Item Cánh Thần Mặt Trời 15029995
+2025-04-11 20:35:35 - xu Nâng Cấp Item Cánh Thần Mặt Trời 14921995
+2025-04-11 20:35:35 - xu Nâng Cấp Item Cánh Thần Mặt Trời 14813995
+2025-04-11 20:35:35 - xu Nâng Cấp Item Cánh Thần Mặt Trời 14705995
+2025-04-11 20:35:35 - xu Nâng Cấp Item Cánh Thần Mặt Trời 14597995
+2025-04-11 20:35:40 - saveData errorThẻ VIP(7 ngày) 6 Item Thẻ VIP(7 ngày)
+2025-04-13 19:17:31 - xu load :14597995
+2025-04-13 19:17:31 - luong load :4500
+2025-04-13 19:18:30 - luong : 0
+2025-04-13 19:18:30 - nobita cuoc 4500 Lượng vào Xỉu.
+2025-04-13 19:18:34 - Rất tiếc, nobita, bạn đã thua cược. 4, 6, 4 14 Tài
+2025-04-13 19:18:34 - tiền XU tx:14597995Lượng tx0
+2025-04-13 19:18:39 - saveData errorThẻ VIP(7 ngày) 6 Item Thẻ VIP(7 ngày)

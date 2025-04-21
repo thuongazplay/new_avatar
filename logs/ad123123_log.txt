@@ -1,0 +1,56 @@
+2025-04-14 22:47:30 - xu load :0
+2025-04-14 22:47:30 - luong load :739730214
+2025-04-14 22:47:30 - loadData quantity 254
+2025-04-14 22:49:34 - saveData errorSen ngũ sắc 4 Item Sen ngũ sắc
+2025-04-14 22:49:34 - saveData errorkim cương vũ trụ 2 Item kim cương vũ trụ
+2025-04-14 22:49:34 - saveData errorđá mặt trăng 4 Item đá mặt trăng
+2025-04-14 22:49:34 - saveData errorĐá ngũ sắc 254 Item Đá ngũ sắc
+2025-04-14 22:49:34 - saveData errorKẹo ác ma(30 ngày) 3 Item Kẹo ác ma(30 ngày)
+2025-04-14 22:49:34 - saveData errorHộp quà số 3 42 Item Hộp quà số 3
+2025-04-14 22:49:34 - saveData errorChâu 2 Item Châu
+2025-04-14 22:49:34 - saveData errorThẻ VIP(7 ngày) 17 Item Thẻ VIP(7 ngày)
+2025-04-15 07:26:04 - xu load :0
+2025-04-15 07:26:04 - luong load :739730214
+2025-04-15 07:26:04 - loadData quantity 254
+2025-04-15 07:32:35 - saveData errorSen ngũ sắc 4 Item Sen ngũ sắc
+2025-04-15 07:32:35 - saveData errorkim cương vũ trụ 2 Item kim cương vũ trụ
+2025-04-15 07:32:35 - saveData errorđá mặt trăng 4 Item đá mặt trăng
+2025-04-15 07:32:35 - saveData errorĐá ngũ sắc 254 Item Đá ngũ sắc
+2025-04-15 07:32:35 - saveData errorKẹo ác ma(30 ngày) 3 Item Kẹo ác ma(30 ngày)
+2025-04-15 07:32:35 - saveData errorHộp quà số 3 42 Item Hộp quà số 3
+2025-04-15 07:32:35 - saveData errorChâu 2 Item Châu
+2025-04-15 07:32:35 - saveData errorThẻ VIP(7 ngày) 17 Item Thẻ VIP(7 ngày)
+2025-04-15 07:33:50 - xu load :50000000
+2025-04-15 07:33:50 - luong load :739730214
+2025-04-15 07:33:50 - loadData quantity 254
+2025-04-15 07:35:17 - saveData errorSen ngũ sắc 4 Item Sen ngũ sắc
+2025-04-15 07:35:17 - saveData errorkim cương vũ trụ 2 Item kim cương vũ trụ
+2025-04-15 07:35:17 - saveData errorđá mặt trăng 4 Item đá mặt trăng
+2025-04-15 07:35:17 - saveData errorĐá ngũ sắc 254 Item Đá ngũ sắc
+2025-04-15 07:35:17 - saveData errorKẹo ác ma(30 ngày) 3 Item Kẹo ác ma(30 ngày)
+2025-04-15 07:35:17 - saveData errorHộp quà số 3 42 Item Hộp quà số 3
+2025-04-15 07:35:17 - saveData errorChâu 2 Item Châu
+2025-04-15 07:35:17 - saveData errorThẻ VIP(7 ngày) 17 Item Thẻ VIP(7 ngày)
+2025-04-15 07:35:28 - xu load :5
+2025-04-15 07:35:28 - luong load :50
+2025-04-15 07:35:28 - loadData quantity 254
+2025-04-15 08:09:43 - luong : 45
+2025-04-15 13:16:08 - saveData errorSen ngũ sắc 4 Item Sen ngũ sắc
+2025-04-15 13:16:08 - saveData errorkim cương vũ trụ 2 Item kim cương vũ trụ
+2025-04-15 13:16:08 - saveData errorđá mặt trăng 4 Item đá mặt trăng
+2025-04-15 13:16:08 - saveData errorĐá ngũ sắc 254 Item Đá ngũ sắc
+2025-04-15 13:16:08 - saveData errorKẹo ác ma(30 ngày) 3 Item Kẹo ác ma(30 ngày)
+2025-04-15 13:16:08 - saveData errorHộp quà số 3 42 Item Hộp quà số 3
+2025-04-15 13:16:08 - saveData errorChâu 2 Item Châu
+2025-04-15 13:16:08 - saveData errorThẻ VIP(7 ngày) 17 Item Thẻ VIP(7 ngày)
+2025-04-15 13:32:15 - xu load :2535
+2025-04-15 13:32:15 - luong load :45
+2025-04-15 13:32:15 - loadData quantity 254
+2025-04-15 13:33:11 - saveData errorSen ngũ sắc 4 Item Sen ngũ sắc
+2025-04-15 13:33:11 - saveData errorkim cương vũ trụ 2 Item kim cương vũ trụ
+2025-04-15 13:33:11 - saveData errorđá mặt trăng 4 Item đá mặt trăng
+2025-04-15 13:33:11 - saveData errorĐá ngũ sắc 254 Item Đá ngũ sắc
+2025-04-15 13:33:11 - saveData errorKẹo ác ma(30 ngày) 3 Item Kẹo ác ma(30 ngày)
+2025-04-15 13:33:11 - saveData errorHộp quà số 3 42 Item Hộp quà số 3
+2025-04-15 13:33:11 - saveData errorChâu 2 Item Châu
+2025-04-15 13:33:11 - saveData errorThẻ VIP(7 ngày) 17 Item Thẻ VIP(7 ngày)

@@ -1,0 +1,319 @@
+2025-04-14 12:51:46 - xu load :20000
+2025-04-14 12:51:46 - luong load :0
+2025-04-14 12:56:27 - xu load :20000
+2025-04-14 12:56:27 - luong load :0
+2025-04-15 13:33:18 - xu load :20000
+2025-04-15 13:33:18 - luong load :0
+2025-04-15 13:40:50 - luong : 10000
+2025-04-15 13:41:44 - xu load :99020000
+2025-04-15 13:41:44 - luong load :10000
+2025-04-15 13:43:27 - xu load :99020000
+2025-04-15 13:43:27 - luong load :10000
+2025-04-15 13:43:49 - luong : 10010
+2025-04-15 13:43:56 - luong : 10020
+2025-04-15 13:43:58 - luong : 10030
+2025-04-15 13:43:59 - luong : 10040
+2025-04-15 13:44:00 - luong : 10050
+2025-04-15 13:44:00 - luong : 10060
+2025-04-15 13:44:00 - luong : 10070
+2025-04-15 13:44:00 - luong : 10080
+2025-04-15 13:44:00 - luong : 10090
+2025-04-15 13:44:00 - luong : 10100
+2025-04-15 13:44:00 - luong : 10110
+2025-04-15 13:44:01 - luong : 10120
+2025-04-15 13:44:01 - luong : 10130
+2025-04-15 13:44:01 - luong : 10140
+2025-04-15 13:44:49 - FindItemInChests bug 2 Item hộp quà may mắn
+2025-04-15 13:44:49 - FindItemInChests bug 2 Item hộp quà may mắn
+2025-04-15 13:44:49 - FindItemInChests bug 2 Item hộp quà may mắn
+2025-04-15 13:45:39 - luong : 10150
+2025-04-15 13:45:41 - luong : 10160
+2025-04-15 13:45:41 - luong : 10170
+2025-04-15 13:45:41 - luong : 10180
+2025-04-15 13:45:41 - luong : 10190
+2025-04-15 13:45:48 - FindItemInChests bug 2 Item Hộp quà số 3
+2025-04-15 13:45:51 - FindItemInChests bug 3 Item hộp quà may mắn
+2025-04-15 13:48:04 - FindItemInChests bug 2 Item Châu
+2025-04-15 13:48:04 - removeItemFromChest bug 2 Item Châu
+2025-04-15 13:49:35 - FindItemInChests bug 2 Item Hộp quà số 3
+2025-04-15 13:49:37 - FindItemInChests bug 3 Item hộp quà may mắn
+2025-04-15 13:49:37 - FindItemInChests bug 3 Item hộp quà may mắn
+2025-04-15 13:49:37 - removeItem error 3 Item hộp quà may mắn
+2025-04-15 13:49:37 - luong : 10191
+2025-04-15 13:49:41 - FindItemInChests bug 2 Item hộp quà may mắn
+2025-04-15 13:49:41 - FindItemInChests bug 2 Item hộp quà may mắn
+2025-04-15 13:49:41 - removeItem error 2 Item hộp quà may mắn
+2025-04-15 13:49:58 - luong : 10184
+2025-04-15 13:49:58 - Luong Nâng Cấp Item chong chóng xinh xắn 10184
+2025-04-15 13:50:00 - luong : 10177
+2025-04-15 13:50:00 - Luong Nâng Cấp Item chong chóng xinh xắn 10177
+2025-04-15 13:50:00 - luong : 10170
+2025-04-15 13:50:00 - Luong Nâng Cấp Item chong chóng xinh xắn 10170
+2025-04-15 13:50:05 - luong : 10161
+2025-04-15 13:50:05 - Luong Nâng Cấp Item chong chóng sắc màu 10161
+2025-04-15 13:50:06 - luong : 10152
+2025-04-15 13:50:06 - Luong Nâng Cấp Item chong chóng sắc màu 10152
+2025-04-15 13:50:06 - luong : 10143
+2025-04-15 13:50:06 - Luong Nâng Cấp Item chong chóng sắc màu 10143
+2025-04-15 13:50:07 - luong : 10134
+2025-04-15 13:50:07 - Luong Nâng Cấp Item chong chóng sắc màu 10134
+2025-04-15 13:50:07 - luong : 10125
+2025-04-15 13:50:07 - Luong Nâng Cấp Item chong chóng sắc màu 10125
+2025-04-15 13:50:08 - luong : 10116
+2025-04-15 13:50:08 - Luong Nâng Cấp Item chong chóng sắc màu 10116
+2025-04-15 13:50:08 - luong : 10107
+2025-04-15 13:50:08 - Luong Nâng Cấp Item chong chóng sắc màu 10107
+2025-04-15 13:50:10 - luong : 10093
+2025-04-15 13:50:10 - Luong Nâng Cấp Item chong chóng nhiệm màu 10093
+2025-04-15 13:50:10 - luong : 10079
+2025-04-15 13:50:10 - Luong Nâng Cấp Item chong chóng nhiệm màu 10079
+2025-04-15 13:50:11 - luong : 10065
+2025-04-15 13:50:11 - Luong Nâng Cấp Item chong chóng nhiệm màu 10065
+2025-04-15 13:50:11 - luong : 10051
+2025-04-15 13:50:11 - Luong Nâng Cấp Item chong chóng nhiệm màu 10051
+2025-04-15 13:50:12 - luong : 10037
+2025-04-15 13:50:12 - Luong Nâng Cấp Item chong chóng nhiệm màu 10037
+2025-04-15 13:50:15 - luong : 10015
+2025-04-15 13:50:15 - Luong Nâng Cấp Item chong chóng thần kỳ 10015
+2025-04-15 13:50:15 - luong : 9993
+2025-04-15 13:50:15 - Luong Nâng Cấp Item chong chóng thần kỳ 9993
+2025-04-15 13:50:16 - luong : 9971
+2025-04-15 13:50:16 - Luong Nâng Cấp Item chong chóng thần kỳ 9971
+2025-04-15 13:50:16 - luong : 9949
+2025-04-15 13:50:16 - Luong Nâng Cấp Item chong chóng thần kỳ 9949
+2025-04-15 13:50:17 - luong : 9927
+2025-04-15 13:50:17 - Luong Nâng Cấp Item chong chóng thần kỳ 9927
+2025-04-15 13:50:17 - luong : 9905
+2025-04-15 13:50:17 - Luong Nâng Cấp Item chong chóng thần kỳ 9905
+2025-04-15 13:50:18 - luong : 9883
+2025-04-15 13:50:18 - Luong Nâng Cấp Item chong chóng thần kỳ 9883
+2025-04-15 13:50:20 - luong : 9861
+2025-04-15 13:50:20 - Luong Nâng Cấp Item chong chóng thần kỳ 9861
+2025-04-15 13:50:20 - luong : 9839
+2025-04-15 13:50:20 - Luong Nâng Cấp Item chong chóng thần kỳ 9839
+2025-04-15 13:50:21 - luong : 9817
+2025-04-15 13:50:21 - Luong Nâng Cấp Item chong chóng thần kỳ 9817
+2025-04-15 13:50:21 - luong : 9795
+2025-04-15 13:50:21 - Luong Nâng Cấp Item chong chóng thần kỳ 9795
+2025-04-15 13:50:22 - luong : 9773
+2025-04-15 13:50:22 - Luong Nâng Cấp Item chong chóng thần kỳ 9773
+2025-04-15 13:50:22 - luong : 9751
+2025-04-15 13:50:22 - Luong Nâng Cấp Item chong chóng thần kỳ 9751
+2025-04-15 13:50:23 - luong : 9729
+2025-04-15 13:50:23 - Luong Nâng Cấp Item chong chóng thần kỳ 9729
+2025-04-15 13:50:23 - luong : 9707
+2025-04-15 13:50:23 - Luong Nâng Cấp Item chong chóng thần kỳ 9707
+2025-04-15 13:50:24 - luong : 9685
+2025-04-15 13:50:24 - Luong Nâng Cấp Item chong chóng thần kỳ 9685
+2025-04-15 13:50:24 - luong : 9663
+2025-04-15 13:50:24 - Luong Nâng Cấp Item chong chóng thần kỳ 9663
+2025-04-15 13:50:25 - luong : 9641
+2025-04-15 13:50:25 - Luong Nâng Cấp Item chong chóng thần kỳ 9641
+2025-04-15 13:50:25 - luong : 9619
+2025-04-15 13:50:25 - Luong Nâng Cấp Item chong chóng thần kỳ 9619
+2025-04-15 13:51:25 - luong : 9597
+2025-04-15 13:51:25 - Luong Nâng Cấp Item chong chóng thần kỳ 9597
+2025-04-15 14:03:30 - luong : 9597
+2025-04-15 14:03:54 - luong : 9597
+2025-04-15 14:04:13 - saveData errorHộp quà số 3 2 Item Hộp quà số 3
+2025-04-15 14:05:01 - xu load :98818279
+2025-04-15 14:05:01 - luong load :9597
+2025-04-15 14:08:23 - saveData errorHộp quà số 3 2 Item Hộp quà số 3
+2025-04-15 14:08:25 - xu load :98818279
+2025-04-15 14:08:25 - luong load :9597
+2025-04-15 14:09:01 - saveData errorHộp quà số 3 2 Item Hộp quà số 3
+2025-04-15 14:09:22 - xu load :98818279
+2025-04-15 14:09:22 - luong load :9597
+2025-04-15 14:14:16 - luong : 19597
+2025-04-15 14:14:16 - addItemToChests error 10 Item Thẻ VIP(7 ngày)
+2025-04-15 14:14:32 - FindItemInChests bug 10 Item Thẻ VIP(7 ngày)
+2025-04-15 14:14:32 - FindItemInChests bug 10 Item Thẻ VIP(7 ngày)
+2025-04-15 14:14:32 - removeItem error 10 Item Thẻ VIP(7 ngày)
+2025-04-15 14:14:32 - luong : 19597
+2025-04-15 14:14:38 - FindItemInChests bug 9 Item Thẻ VIP(7 ngày)
+2025-04-15 14:14:38 - FindItemInChests bug 9 Item Thẻ VIP(7 ngày)
+2025-04-15 14:14:38 - removeItem error 9 Item Thẻ VIP(7 ngày)
+2025-04-15 14:14:38 - luong : 19597
+2025-04-15 14:14:39 - FindItemInChests bug 8 Item Thẻ VIP(7 ngày)
+2025-04-15 14:14:39 - FindItemInChests bug 8 Item Thẻ VIP(7 ngày)
+2025-04-15 14:14:39 - removeItem error 8 Item Thẻ VIP(7 ngày)
+2025-04-15 14:14:39 - luong : 19597
+2025-04-15 14:14:42 - FindItemInChests bug 7 Item Thẻ VIP(7 ngày)
+2025-04-15 14:14:42 - FindItemInChests bug 7 Item Thẻ VIP(7 ngày)
+2025-04-15 14:14:42 - removeItem error 7 Item Thẻ VIP(7 ngày)
+2025-04-15 14:14:42 - luong : 19597
+2025-04-15 14:14:43 - FindItemInChests bug 6 Item Thẻ VIP(7 ngày)
+2025-04-15 14:14:43 - FindItemInChests bug 6 Item Thẻ VIP(7 ngày)
+2025-04-15 14:14:43 - removeItem error 6 Item Thẻ VIP(7 ngày)
+2025-04-15 14:14:43 - luong : 19597
+2025-04-15 14:14:46 - FindItemInChests bug 5 Item Thẻ VIP(7 ngày)
+2025-04-15 14:14:46 - FindItemInChests bug 5 Item Thẻ VIP(7 ngày)
+2025-04-15 14:14:46 - removeItem error 5 Item Thẻ VIP(7 ngày)
+2025-04-15 14:14:46 - luong : 19597
+2025-04-15 14:14:48 - FindItemInChests bug 4 Item Thẻ VIP(7 ngày)
+2025-04-15 14:14:48 - FindItemInChests bug 4 Item Thẻ VIP(7 ngày)
+2025-04-15 14:14:48 - removeItem error 4 Item Thẻ VIP(7 ngày)
+2025-04-15 14:14:48 - luong : 19597
+2025-04-15 14:14:49 - FindItemInChests bug 3 Item Thẻ VIP(7 ngày)
+2025-04-15 14:14:49 - FindItemInChests bug 3 Item Thẻ VIP(7 ngày)
+2025-04-15 14:14:49 - removeItem error 3 Item Thẻ VIP(7 ngày)
+2025-04-15 14:14:49 - luong : 19597
+2025-04-15 14:14:51 - FindItemInChests bug 2 Item Thẻ VIP(7 ngày)
+2025-04-15 14:14:51 - FindItemInChests bug 2 Item Thẻ VIP(7 ngày)
+2025-04-15 14:14:51 - removeItem error 2 Item Thẻ VIP(7 ngày)
+2025-04-15 14:14:51 - luong : 19597
+2025-04-15 14:14:53 - luong : 19597
+2025-04-15 14:54:40 - saveData errorHộp quà số 3 2 Item Hộp quà số 3
+2025-04-15 14:54:51 - xu load :198818279
+2025-04-15 14:54:51 - luong load :19597
+2025-04-15 15:36:37 - saveData errorHộp quà số 3 2 Item Hộp quà số 3
+2025-04-15 15:36:41 - xu load :198458279
+2025-04-15 15:36:41 - luong load :19597
+2025-04-15 15:39:02 - saveData errorHộp quà số 3 2 Item Hộp quà số 3
+2025-04-15 15:39:05 - xu load :198458279
+2025-04-15 15:39:05 - luong load :19597
+2025-04-15 16:07:07 - saveData errorHộp quà số 3 2 Item Hộp quà số 3
+2025-04-15 16:33:31 - xu load :198458279
+2025-04-15 16:33:31 - luong load :19597
+2025-04-15 17:43:33 - saveData errorHộp quà số 3 2 Item Hộp quà số 3
+2025-04-16 15:52:01 - xu load :198458279
+2025-04-16 15:52:01 - luong load :19597
+2025-04-16 15:55:44 - luong : 19607
+2025-04-16 15:55:47 - luong : 19617
+2025-04-16 15:56:16 - luong : 19627
+2025-04-16 15:56:35 - luong : 19637
+2025-04-16 15:56:37 - luong : 19647
+2025-04-16 15:56:39 - luong : 19657
+2025-04-16 15:56:39 - FindItemInChests bug 2 Item Hộp quà số 3
+2025-04-16 15:56:39 - FindItemInChests bug 2 Item Hộp quà số 3
+2025-04-16 15:56:39 - FindItemInChests bug 2 Item Hộp quà số 3
+2025-04-16 17:06:22 - saveData errorHộp quà số 3 3 Item Hộp quà số 3
+2025-04-16 17:12:07 - xu load :198518273
+2025-04-16 17:12:07 - luong load :19657
+2025-04-16 17:12:56 - luong : 19557
+2025-04-16 17:12:58 - luong : 19555
+2025-04-16 17:13:15 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:13:41 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:14:10 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:14:40 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:15:09 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:15:40 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:16:10 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:16:24 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:16:39 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:16:55 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:17:09 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:17:25 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:17:38 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:17:56 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:18:10 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:18:26 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:18:43 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:18:57 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:19:10 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:19:28 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:19:44 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:20:01 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:20:14 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:20:30 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:20:47 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:21:00 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:21:17 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:21:32 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:21:49 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:22:05 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:22:23 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:22:39 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:22:56 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:23:13 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:23:27 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:23:42 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:23:59 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:24:14 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:24:27 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:24:44 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:25:02 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:25:20 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:25:35 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:25:52 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:26:07 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:26:20 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:26:37 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:26:55 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:27:11 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:27:29 - FindItemInChests bug 2 Item Đá ngũ sắc
+2025-04-16 17:27:29 - FindItemInChests bug 2 Item Đá ngũ sắc
+2025-04-16 17:27:29 - FindItemInChests bug 2 Item Đá ngũ sắc
+2025-04-16 17:27:29 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:27:44 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:28:00 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:28:18 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:28:34 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:28:50 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:29:07 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:29:23 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:29:39 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:29:54 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:30:08 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:30:22 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:30:38 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:30:52 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:31:06 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:31:23 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:31:37 - FindItemInChests bug 3 Item Đá ngũ sắc
+2025-04-16 17:31:37 - FindItemInChests bug 3 Item Đá ngũ sắc
+2025-04-16 17:31:37 - FindItemInChests bug 3 Item Đá ngũ sắc
+2025-04-16 17:31:37 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:31:54 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:32:10 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:32:27 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:32:42 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:32:55 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:33:08 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:33:24 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:33:38 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:33:56 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:34:10 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:34:24 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:34:40 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:34:56 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:35:09 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:35:25 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:35:40 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:35:57 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:36:10 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:36:28 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:36:45 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:37:02 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:37:16 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:37:29 - FindItemInChests bug 4 Item Đá ngũ sắc
+2025-04-16 17:37:29 - FindItemInChests bug 4 Item Đá ngũ sắc
+2025-04-16 17:37:29 - FindItemInChests bug 4 Item Đá ngũ sắc
+2025-04-16 17:37:29 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:37:48 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:38:03 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:38:17 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:38:34 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:38:48 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:39:05 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:39:20 - FindItemInChests bug 5 Item Đá ngũ sắc
+2025-04-16 17:39:20 - FindItemInChests bug 5 Item Đá ngũ sắc
+2025-04-16 17:39:20 - FindItemInChests bug 5 Item Đá ngũ sắc
+2025-04-16 17:39:20 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:39:34 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:39:51 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:40:07 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:40:22 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:40:37 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:40:51 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:41:06 - Lỗi: item là null trong removeItemFromChest bug
+2025-04-16 17:41:38 - saveData errorHộp quà số 3 3 Item Hộp quà số 3
+2025-04-16 17:41:38 - saveData errorĐá ngũ sắc 6 Item Đá ngũ sắc
+2025-04-17 15:45:57 - xu load :198516753
+2025-04-17 15:45:57 - luong load :19555
+2025-04-17 15:46:57 - FindItemInChests bug 3 Item Hộp quà số 3
+2025-04-17 15:46:57 - removeItemFromChest bug 3 Item Hộp quà số 3
+2025-04-17 15:55:02 - saveData errorĐá ngũ sắc 6 Item Đá ngũ sắc
+2025-04-17 15:55:07 - xu load :198516753
+2025-04-17 15:55:07 - luong load :19555
+2025-04-17 15:55:17 - saveData errorĐá ngũ sắc 6 Item Đá ngũ sắc

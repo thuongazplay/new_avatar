@@ -1,0 +1,203 @@
+2025-04-11 20:22:41 - xu load :20000
+2025-04-11 20:22:41 - luong load :0
+2025-04-11 20:22:57 - luong : 10000
+2025-04-11 20:23:16 - dmm cuoc 50000000 Xu vào Tài.
+2025-04-11 20:23:22 - Chúc mừng dmm! Bạn đã thắng cược và nhận được 95000000 Xu. 3, 5, 6 14 Tài
+2025-04-11 20:23:22 - tiền XU tx:145020000Lượng tx10000
+2025-04-11 20:23:29 - dmm cuoc 50000000 Xu vào Xỉu.
+2025-04-11 20:24:08 - Rất tiếc, dmm, bạn đã thua cược. 4, 4, 4 12 Tài
+2025-04-11 20:24:08 - tiền XU tx:95020000Lượng tx10000
+2025-04-11 20:24:25 - dmm cuoc 50000000 Xu vào Tài.
+2025-04-11 20:24:54 - Chúc mừng dmm! Bạn đã thắng cược và nhận được 95000000 Xu. 1, 6, 5 12 Tài
+2025-04-11 20:24:54 - tiền XU tx:140020000Lượng tx10000
+2025-04-11 20:25:10 - dmm cuoc 50000000 Xu vào Tài.
+2025-04-11 20:25:40 - Chúc mừng dmm! Bạn đã thắng cược và nhận được 95000000 Xu. 6, 5, 6 17 Tài
+2025-04-11 20:25:40 - tiền XU tx:185020000Lượng tx10000
+2025-04-11 20:26:11 - dmm cuoc 50000000 Xu vào Tài.
+2025-04-11 20:26:27 - Rất tiếc, dmm, bạn đã thua cược. 3, 5, 2 10 Xỉu
+2025-04-11 20:26:27 - tiền XU tx:135020000Lượng tx10000
+2025-04-11 20:26:47 - dmm cuoc 50000000 Xu vào Tài.
+2025-04-11 20:27:13 - Rất tiếc, dmm, bạn đã thua cược. 1, 3, 1 5 Xỉu
+2025-04-11 20:27:13 - tiền XU tx:85020000Lượng tx10000
+2025-04-11 20:27:25 - dmm cuoc 50000000 Xu vào Tài.
+2025-04-11 20:27:59 - Chúc mừng dmm! Bạn đã thắng cược và nhận được 95000000 Xu. 6, 2, 5 13 Tài
+2025-04-11 20:27:59 - tiền XU tx:130020000Lượng tx10000
+2025-04-11 20:28:12 - dmm cuoc 50000000 Xu vào Tài.
+2025-04-11 20:28:45 - Rất tiếc, dmm, bạn đã thua cược. 2, 5, 2 9 Xỉu
+2025-04-11 20:28:45 - tiền XU tx:80020000Lượng tx10000
+2025-04-11 20:29:07 - dmm cuoc 50000000 Xu vào Tài.
+2025-04-11 20:29:32 - Chúc mừng dmm! Bạn đã thắng cược và nhận được 95000000 Xu. 2, 6, 4 12 Tài
+2025-04-11 20:29:32 - tiền XU tx:125020000Lượng tx10000
+2025-04-11 20:29:52 - dmm cuoc 50000000 Xu vào Tài.
+2025-04-11 20:30:12 - FindItemInChests bug 2 Item Hộp quà số 3
+2025-04-11 20:30:12 - FindItemInChests bug 2 Item Hộp quà số 3
+2025-04-11 20:30:12 - FindItemInChests bug 2 Item Hộp quà số 3
+2025-04-11 20:30:12 - FindItemInChests bug 3 Item Hộp quà số 3
+2025-04-11 20:30:12 - FindItemInChests bug 3 Item Hộp quà số 3
+2025-04-11 20:30:12 - FindItemInChests bug 3 Item Hộp quà số 3
+2025-04-11 20:30:18 - Chúc mừng dmm! Bạn đã thắng cược và nhận được 95000000 Xu. 6, 4, 5 15 Tài
+2025-04-11 20:30:18 - tiền XU tx:170020000Lượng tx10000
+2025-04-11 20:30:27 - dmm cuoc 50000000 Xu vào Xỉu.
+2025-04-11 20:30:39 - FindItemInChests bug 4 Item Hộp quà số 3
+2025-04-11 20:30:39 - FindItemInChests bug 4 Item Hộp quà số 3
+2025-04-11 20:30:39 - FindItemInChests bug 4 Item Hộp quà số 3
+2025-04-11 20:30:39 - FindItemInChests bug 5 Item Hộp quà số 3
+2025-04-11 20:30:39 - FindItemInChests bug 5 Item Hộp quà số 3
+2025-04-11 20:30:39 - FindItemInChests bug 5 Item Hộp quà số 3
+2025-04-11 20:31:04 - Rất tiếc, dmm, bạn đã thua cược. 5, 6, 2 13 Tài
+2025-04-11 20:31:04 - tiền XU tx:120020000Lượng tx10000
+2025-04-11 20:31:06 - FindItemInChests bug 6 Item Hộp quà số 3
+2025-04-11 20:31:06 - FindItemInChests bug 6 Item Hộp quà số 3
+2025-04-11 20:31:06 - FindItemInChests bug 6 Item Hộp quà số 3
+2025-04-11 20:31:06 - FindItemInChests bug 7 Item Hộp quà số 3
+2025-04-11 20:31:06 - FindItemInChests bug 7 Item Hộp quà số 3
+2025-04-11 20:31:06 - FindItemInChests bug 7 Item Hộp quà số 3
+2025-04-11 20:31:50 - dmm cuoc 50000000 Xu vào Tài.
+2025-04-11 20:31:50 - Chúc mừng dmm! Bạn đã thắng cược và nhận được 95000000 Xu. 3, 6, 3 12 Tài
+2025-04-11 20:31:50 - tiền XU tx:165020000Lượng tx10000
+2025-04-11 20:31:57 - dmm cuoc 50000000 Xu vào Tài.
+2025-04-11 20:32:37 - Chúc mừng dmm! Bạn đã thắng cược và nhận được 95000000 Xu. 6, 5, 3 14 Tài
+2025-04-11 20:32:37 - tiền XU tx:210020000Lượng tx10000
+2025-04-11 20:33:01 - dmm cuoc 50000000 Xu vào Tài.
+2025-04-11 20:33:23 - Rất tiếc, dmm, bạn đã thua cược. 4, 1, 5 10 Xỉu
+2025-04-11 20:33:23 - tiền XU tx:160020000Lượng tx10000
+2025-04-11 20:33:32 - dmm cuoc 50000000 Xu vào Tài.
+2025-04-11 20:34:09 - Chúc mừng dmm! Bạn đã thắng cược và nhận được 95000000 Xu. 2, 3, 6 11 Tài
+2025-04-11 20:34:09 - tiền XU tx:205020000Lượng tx10000
+2025-04-11 20:34:19 - dmm cuoc 50000000 Xu vào Xỉu.
+2025-04-11 20:34:56 - Rất tiếc, dmm, bạn đã thua cược. 4, 1, 6 11 Tài
+2025-04-11 20:34:56 - tiền XU tx:155020000Lượng tx10000
+2025-04-11 20:35:58 - dmm cuoc 50000000 Xu vào Xỉu.
+2025-04-11 20:36:28 - Chúc mừng dmm! Bạn đã thắng cược và nhận được 95000000 Xu. 6, 1, 3 10 Xỉu
+2025-04-11 20:36:28 - tiền XU tx:200020000Lượng tx10000
+2025-04-11 20:36:30 - FindItemInChests bug 8 Item Hộp quà số 3
+2025-04-11 20:36:30 - FindItemInChests bug 8 Item Hộp quà số 3
+2025-04-11 20:36:30 - FindItemInChests bug 8 Item Hộp quà số 3
+2025-04-11 20:36:46 - dmm cuoc 50000000 Xu vào Tài.
+2025-04-11 20:36:57 - FindItemInChests bug 9 Item Hộp quà số 3
+2025-04-11 20:36:57 - FindItemInChests bug 9 Item Hộp quà số 3
+2025-04-11 20:36:57 - FindItemInChests bug 9 Item Hộp quà số 3
+2025-04-11 20:37:15 - Chúc mừng dmm! Bạn đã thắng cược và nhận được 95000000 Xu. 5, 5, 3 13 Tài
+2025-04-11 20:37:15 - tiền XU tx:245020000Lượng tx10000
+2025-04-11 20:37:24 - FindItemInChests bug 10 Item Hộp quà số 3
+2025-04-11 20:37:24 - FindItemInChests bug 10 Item Hộp quà số 3
+2025-04-11 20:37:24 - FindItemInChests bug 10 Item Hộp quà số 3
+2025-04-11 20:37:31 - dmm cuoc 50000000 Xu vào Tài.
+2025-04-11 20:37:51 - FindItemInChests bug 11 Item Hộp quà số 3
+2025-04-11 20:37:51 - FindItemInChests bug 11 Item Hộp quà số 3
+2025-04-11 20:37:51 - FindItemInChests bug 11 Item Hộp quà số 3
+2025-04-11 20:38:01 - Chúc mừng dmm! Bạn đã thắng cược và nhận được 95000000 Xu. 6, 1, 5 12 Tài
+2025-04-11 20:38:01 - tiền XU tx:290020000Lượng tx10000
+2025-04-11 20:38:24 - dmm cuoc 50000000 Xu vào Xỉu.
+2025-04-11 20:38:47 - Rất tiếc, dmm, bạn đã thua cược. 6, 1, 6 13 Tài
+2025-04-11 20:38:47 - tiền XU tx:240020000Lượng tx10000
+2025-04-11 20:39:29 - dmm cuoc 50000000 Xu vào Tài.
+2025-04-11 20:39:33 - Chúc mừng dmm! Bạn đã thắng cược và nhận được 95000000 Xu. 3, 4, 6 13 Tài
+2025-04-11 20:39:33 - tiền XU tx:285020000Lượng tx10000
+2025-04-11 20:39:48 - dmm cuoc 50000000 Xu vào Tài.
+2025-04-11 20:40:19 - Rất tiếc, dmm, bạn đã thua cược. 2, 1, 1 4 Xỉu
+2025-04-11 20:40:19 - tiền XU tx:235020000Lượng tx10000
+2025-04-11 20:40:59 - dmm cuoc 50000000 Xu vào Tài.
+2025-04-11 20:41:05 - Rất tiếc, dmm, bạn đã thua cược. 4, 5, 1 10 Xỉu
+2025-04-11 20:41:05 - tiền XU tx:185020000Lượng tx10000
+2025-04-11 20:41:19 - dmm cuoc 50000000 Xu vào Xỉu.
+2025-04-11 20:41:52 - Chúc mừng dmm! Bạn đã thắng cược và nhận được 95000000 Xu. 1, 4, 5 10 Xỉu
+2025-04-11 20:41:52 - tiền XU tx:230020000Lượng tx10000
+2025-04-11 20:42:29 - dmm cuoc 50000000 Xu vào Xỉu.
+2025-04-11 20:42:38 - Chúc mừng dmm! Bạn đã thắng cược và nhận được 95000000 Xu. 1, 4, 2 7 Xỉu
+2025-04-11 20:42:38 - tiền XU tx:275020000Lượng tx10000
+2025-04-11 20:42:55 - dmm cuoc 50000000 Xu vào Tài.
+2025-04-11 20:43:24 - Rất tiếc, dmm, bạn đã thua cược. 4, 1, 5 10 Xỉu
+2025-04-11 20:43:24 - tiền XU tx:225020000Lượng tx10000
+2025-04-11 20:44:00 - dmm cuoc 50000000 Xu vào Xỉu.
+2025-04-11 20:44:11 - Chúc mừng dmm! Bạn đã thắng cược và nhận được 95000000 Xu. 2, 6, 2 10 Xỉu
+2025-04-11 20:44:11 - tiền XU tx:270020000Lượng tx10000
+2025-04-11 20:44:18 - dmm cuoc 50000000 Xu vào Xỉu.
+2025-04-11 20:44:57 - Rất tiếc, dmm, bạn đã thua cược. 4, 4, 6 14 Tài
+2025-04-11 20:44:57 - tiền XU tx:220020000Lượng tx10000
+2025-04-11 20:45:13 - dmm cuoc 50000000 Xu vào Tài.
+2025-04-11 20:45:43 - Rất tiếc, dmm, bạn đã thua cược. 5, 1, 4 10 Xỉu
+2025-04-11 20:45:43 - tiền XU tx:170020000Lượng tx10000
+2025-04-11 20:45:56 - dmm cuoc 50000000 Xu vào Xỉu.
+2025-04-11 20:46:30 - Chúc mừng dmm! Bạn đã thắng cược và nhận được 95000000 Xu. 2, 5, 2 9 Xỉu
+2025-04-11 20:46:30 - tiền XU tx:215020000Lượng tx10000
+2025-04-11 20:46:44 - dmm cuoc 50000000 Xu vào Tài.
+2025-04-11 20:47:16 - Chúc mừng dmm! Bạn đã thắng cược và nhận được 95000000 Xu. 6, 3, 2 11 Tài
+2025-04-11 20:47:16 - tiền XU tx:260020000Lượng tx10000
+2025-04-11 20:47:30 - dmm cuoc 50000000 Xu vào Xỉu.
+2025-04-11 20:48:02 - Rất tiếc, dmm, bạn đã thua cược. 2, 5, 5 12 Tài
+2025-04-11 20:48:02 - tiền XU tx:210020000Lượng tx10000
+2025-04-11 20:48:30 - dmm cuoc 50000000 Xu vào Tài.
+2025-04-11 20:48:48 - Rất tiếc, dmm, bạn đã thua cược. 4, 3, 3 10 Xỉu
+2025-04-11 20:48:48 - tiền XU tx:160020000Lượng tx10000
+2025-04-11 20:48:56 - dmm cuoc 50000000 Xu vào Xỉu.
+2025-04-11 20:49:34 - Chúc mừng dmm! Bạn đã thắng cược và nhận được 95000000 Xu. 1, 4, 1 6 Xỉu
+2025-04-11 20:49:34 - tiền XU tx:205020000Lượng tx10000
+2025-04-11 20:49:43 - dmm cuoc 50000000 Xu vào Tài.
+2025-04-11 20:50:20 - Chúc mừng dmm! Bạn đã thắng cược và nhận được 95000000 Xu. 3, 3, 5 11 Tài
+2025-04-11 20:50:20 - tiền XU tx:250020000Lượng tx10000
+2025-04-11 20:50:39 - dmm cuoc 50000000 Xu vào Tài.
+2025-04-11 20:51:06 - Chúc mừng dmm! Bạn đã thắng cược và nhận được 95000000 Xu. 2, 5, 6 13 Tài
+2025-04-11 20:51:06 - tiền XU tx:295020000Lượng tx10000
+2025-04-11 20:51:27 - dmm cuoc 50000000 Xu vào Xỉu.
+2025-04-11 20:51:52 - Rất tiếc, dmm, bạn đã thua cược. 3, 5, 3 11 Tài
+2025-04-11 20:51:52 - tiền XU tx:245020000Lượng tx10000
+2025-04-11 20:52:21 - dmm cuoc 50000000 Xu vào Tài.
+2025-04-11 20:52:39 - Chúc mừng dmm! Bạn đã thắng cược và nhận được 95000000 Xu. 5, 6, 6 17 Tài
+2025-04-11 20:52:39 - tiền XU tx:290020000Lượng tx10000
+2025-04-11 20:53:03 - dmm cuoc 50000000 Xu vào Tài.
+2025-04-11 20:53:25 - Rất tiếc, dmm, bạn đã thua cược. 2, 2, 5 9 Xỉu
+2025-04-11 20:53:25 - tiền XU tx:240020000Lượng tx10000
+2025-04-11 20:53:35 - dmm cuoc 50000000 Xu vào Xỉu.
+2025-04-11 20:54:11 - Chúc mừng dmm! Bạn đã thắng cược và nhận được 95000000 Xu. 5, 2, 1 8 Xỉu
+2025-04-11 20:54:11 - tiền XU tx:285020000Lượng tx10000
+2025-04-11 20:54:22 - dmm cuoc 50000000 Xu vào Tài.
+2025-04-11 20:54:57 - Rất tiếc, dmm, bạn đã thua cược. 3, 2, 2 7 Xỉu
+2025-04-11 20:54:57 - tiền XU tx:235020000Lượng tx10000
+2025-04-11 20:55:30 - dmm cuoc 50000000 Xu vào Xỉu.
+2025-04-11 20:55:43 - Rất tiếc, dmm, bạn đã thua cược. 3, 5, 4 12 Tài
+2025-04-11 20:55:43 - tiền XU tx:185020000Lượng tx10000
+2025-04-11 20:56:01 - dmm cuoc 50000000 Xu vào Xỉu.
+2025-04-11 20:56:29 - Rất tiếc, dmm, bạn đã thua cược. 2, 6, 4 12 Tài
+2025-04-11 20:56:29 - tiền XU tx:135020000Lượng tx10000
+2025-04-11 20:56:42 - dmm cuoc 50000000 Xu vào Tài.
+2025-04-11 20:56:45 - FindItemInChests bug 12 Item Hộp quà số 3
+2025-04-11 20:56:45 - FindItemInChests bug 12 Item Hộp quà số 3
+2025-04-11 20:56:45 - FindItemInChests bug 12 Item Hộp quà số 3
+2025-04-11 20:56:52 - FindItemInChests bug 13 Item Hộp quà số 3
+2025-04-11 20:57:12 - FindItemInChests bug 13 Item Hộp quà số 3
+2025-04-11 20:57:12 - FindItemInChests bug 13 Item Hộp quà số 3
+2025-04-11 20:57:12 - FindItemInChests bug 13 Item Hộp quà số 3
+2025-04-11 20:57:15 - Chúc mừng dmm! Bạn đã thắng cược và nhận được 95000000 Xu. 4, 6, 2 12 Tài
+2025-04-11 20:57:15 - tiền XU tx:180020000Lượng tx10000
+2025-04-11 20:57:30 - dmm cuoc 50000000 Xu vào Tài.
+2025-04-11 20:57:39 - FindItemInChests bug 14 Item Hộp quà số 3
+2025-04-11 20:57:39 - FindItemInChests bug 14 Item Hộp quà số 3
+2025-04-11 20:57:39 - FindItemInChests bug 14 Item Hộp quà số 3
+2025-04-11 20:58:02 - Rất tiếc, dmm, bạn đã thua cược. 5, 4, 1 10 Xỉu
+2025-04-11 20:58:02 - tiền XU tx:130020000Lượng tx10000
+2025-04-11 20:58:06 - FindItemInChests bug 15 Item Hộp quà số 3
+2025-04-11 20:58:06 - FindItemInChests bug 15 Item Hộp quà số 3
+2025-04-11 20:58:06 - FindItemInChests bug 15 Item Hộp quà số 3
+2025-04-11 20:58:34 - dmm cuoc 50000000 Xu vào Xỉu.
+2025-04-11 20:58:48 - Chúc mừng dmm! Bạn đã thắng cược và nhận được 95000000 Xu. 1, 5, 4 10 Xỉu
+2025-04-11 20:58:48 - tiền XU tx:175020000Lượng tx10000
+2025-04-11 20:58:58 - dmm cuoc 50000000 Xu vào Xỉu.
+2025-04-11 20:59:00 - FindItemInChests bug 16 Item Hộp quà số 3
+2025-04-11 20:59:00 - FindItemInChests bug 16 Item Hộp quà số 3
+2025-04-11 20:59:00 - FindItemInChests bug 16 Item Hộp quà số 3
+2025-04-11 20:59:27 - FindItemInChests bug 17 Item Hộp quà số 3
+2025-04-11 20:59:27 - FindItemInChests bug 17 Item Hộp quà số 3
+2025-04-11 20:59:27 - FindItemInChests bug 17 Item Hộp quà số 3
+2025-04-11 20:59:34 - Rất tiếc, dmm, bạn đã thua cược. 3, 6, 4 13 Tài
+2025-04-11 20:59:34 - tiền XU tx:125020000Lượng tx10000
+2025-04-11 20:59:39 - saveData errorHộp quà số 3 18 Item Hộp quà số 3
+2025-04-12 05:47:20 - xu load :125020000
+2025-04-12 05:47:20 - luong load :10000
+2025-04-12 05:48:00 - dmm cuoc 50000000 Xu vào Xỉu.
+2025-04-12 05:48:30 - Rất tiếc, dmm, bạn đã thua cược. 2, 5, 5 12 Tài
+2025-04-12 05:48:30 - tiền XU tx:75020000Lượng tx10000
+2025-04-12 05:48:42 - dmm cuoc 50000000 Xu vào Tài.
+2025-04-12 05:49:16 - Rất tiếc, dmm, bạn đã thua cược. 3, 3, 3 9 Xỉu
+2025-04-12 05:49:16 - tiền XU tx:25020000Lượng tx10000
+2025-04-12 05:49:28 - saveData errorHộp quà số 3 18 Item Hộp quà số 3

@@ -1,0 +1,58 @@
+2025-04-13 22:04:11 - xu load :3196000
+2025-04-13 22:04:11 - luong load :0
+2025-04-13 22:05:50 - addItemToChests error 20 Item Thẻ VIP(7 ngày)
+2025-04-13 22:06:22 - saveData errorThẻ VIP(7 ngày) 20 Item Thẻ VIP(7 ngày)
+2025-04-13 22:07:30 - xu load :3196000
+2025-04-13 22:07:30 - luong load :0
+2025-04-13 22:08:48 - saveData errorThẻ VIP(7 ngày) 20 Item Thẻ VIP(7 ngày)
+2025-04-13 22:45:55 - xu load :3196000
+2025-04-13 22:45:55 - luong load :0
+2025-04-13 22:46:05 - luong : 10000
+2025-04-13 22:46:54 - saveData errorThẻ VIP(7 ngày) 20 Item Thẻ VIP(7 ngày)
+2025-04-13 22:49:16 - xu load :103196000
+2025-04-13 22:49:16 - luong load :10000
+2025-04-13 22:49:58 - FindItemInChests bug 2 Item Hộp quà số 3
+2025-04-13 22:50:00 - FindItemInChests bug 2 Item Hộp quà số 3
+2025-04-13 22:50:04 - FindItemInChests bug 2 Item Hộp quà số 3
+2025-04-13 22:50:50 - FindItemInChests bug 20 Item Thẻ VIP(7 ngày)
+2025-04-13 22:50:50 - FindItemInChests bug 20 Item Thẻ VIP(7 ngày)
+2025-04-13 22:50:50 - removeItem error 20 Item Thẻ VIP(7 ngày)
+2025-04-13 22:50:50 - luong : 10000
+2025-04-13 22:50:53 - FindItemInChests bug 19 Item Thẻ VIP(7 ngày)
+2025-04-13 22:50:53 - FindItemInChests bug 19 Item Thẻ VIP(7 ngày)
+2025-04-13 22:50:53 - removeItem error 19 Item Thẻ VIP(7 ngày)
+2025-04-13 22:50:53 - luong : 10000
+2025-04-13 22:50:55 - FindItemInChests bug 18 Item Thẻ VIP(7 ngày)
+2025-04-13 22:50:55 - FindItemInChests bug 18 Item Thẻ VIP(7 ngày)
+2025-04-13 22:50:55 - removeItem error 18 Item Thẻ VIP(7 ngày)
+2025-04-13 22:50:55 - luong : 10000
+2025-04-13 22:50:56 - FindItemInChests bug 17 Item Thẻ VIP(7 ngày)
+2025-04-13 22:50:56 - FindItemInChests bug 17 Item Thẻ VIP(7 ngày)
+2025-04-13 22:50:56 - removeItem error 17 Item Thẻ VIP(7 ngày)
+2025-04-13 22:50:56 - luong : 10000
+2025-04-13 22:50:58 - FindItemInChests bug 16 Item Thẻ VIP(7 ngày)
+2025-04-13 22:50:58 - FindItemInChests bug 16 Item Thẻ VIP(7 ngày)
+2025-04-13 22:50:58 - removeItem error 16 Item Thẻ VIP(7 ngày)
+2025-04-13 22:50:58 - luong : 10000
+2025-04-13 22:51:00 - FindItemInChests bug 15 Item Thẻ VIP(7 ngày)
+2025-04-13 22:51:00 - FindItemInChests bug 15 Item Thẻ VIP(7 ngày)
+2025-04-13 22:51:00 - removeItem error 15 Item Thẻ VIP(7 ngày)
+2025-04-13 22:51:00 - luong : 10000
+2025-04-13 22:51:01 - FindItemInChests bug 14 Item Thẻ VIP(7 ngày)
+2025-04-13 22:51:01 - FindItemInChests bug 14 Item Thẻ VIP(7 ngày)
+2025-04-13 22:51:01 - removeItem error 14 Item Thẻ VIP(7 ngày)
+2025-04-13 22:51:01 - luong : 10000
+2025-04-13 22:51:02 - FindItemInChests bug 13 Item Thẻ VIP(7 ngày)
+2025-04-13 22:51:02 - FindItemInChests bug 13 Item Thẻ VIP(7 ngày)
+2025-04-13 22:51:02 - removeItem error 13 Item Thẻ VIP(7 ngày)
+2025-04-13 22:51:02 - luong : 10000
+2025-04-13 22:51:04 - FindItemInChests bug 12 Item Thẻ VIP(7 ngày)
+2025-04-13 22:51:04 - FindItemInChests bug 12 Item Thẻ VIP(7 ngày)
+2025-04-13 22:51:04 - removeItem error 12 Item Thẻ VIP(7 ngày)
+2025-04-13 22:51:04 - luong : 10000
+2025-04-13 22:51:25 - FindItemInChests bug 2 Item Hộp quà số 3
+2025-04-13 22:51:57 - luong : 9995
+2025-04-13 22:52:07 - luong : 9990
+2025-04-13 22:52:19 - luong : 9985
+2025-04-13 22:53:03 - saveData errorThẻ VIP(7 ngày) 11 Item Thẻ VIP(7 ngày)
+2025-04-13 22:53:03 - saveData errorHộp quà số 3 2 Item Hộp quà số 3
