@@ -283,6 +283,9 @@ public class GlobalHandler {
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
+                        finally {
+                            System.exit(0);
+                        }
                     }).start();
                 }
                 break;
