@@ -245,9 +245,45 @@ public class GlobalHandler {
             case 98:
                 if (Integer.parseInt(text) == 1) {
                     UserManager.users.forEach(user -> {
-                        user.getAvatarService().serverInfo((String.format("ad : bảo trì sau 2p vui lòng off để tránh mất item")));
-                        user.getAvatarService().serverDialog("bảo trì sau 2p vui lòng off : v");
+                        user.getAvatarService().serverInfo((String.format("Admin : Bảo trì sau 2 phút vui lòng thoát game để tránh lỗi xảy ra !")));
+                        user.getAvatarService().serverDialog("Bảo trì sau 2 phút vui lòng thoát game !");
                     });
+                    new Thread(() -> {
+                        try {
+                            // Đợi 1 phút
+                            Thread.sleep(60000);
+                            UserManager.users.forEach(user -> {
+                                user.getAvatarService().serverInfo((String.format("Admin : Bảo trì sau 1 phút vui lòng thoát game để tránh lỗi xảy ra !")));
+                                user.getAvatarService().serverDialog("Bảo trì sau 1 phút vui lòng thoát game !");
+                            });
+
+                            // Đợi thêm 30s
+                            Thread.sleep(30_000);
+                            UserManager.users.forEach(user -> {
+                                user.getAvatarService().serverInfo((String.format("Admin : Bảo trì sau 30s vui lòng thoát game để tránh lỗi xảy ra !")));
+                                user.getAvatarService().serverDialog("Bảo trì sau 30s vui lòng thoát game !");
+                            });
+
+                            Thread.sleep(30_000);
+
+                            // Disconnect user game
+                            List<Integer> ids = new ArrayList<>();
+                            for (User us : lst) {
+                                ids.add(us.getId());
+                            }
+
+                            for (Integer id : ids) {
+                                try {
+                                    UserManager.getInstance().find(id).session.close();
+                                } catch (Exception e) {
+                                    // Ghi log nếu cần
+                                    e.printStackTrace();
+                                }
+                            }
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }).start();
                 }
                 break;
             case 99:
