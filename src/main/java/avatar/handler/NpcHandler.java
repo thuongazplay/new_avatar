@@ -162,11 +162,11 @@ public class NpcHandler {
                 us.getAvatarService().openMenuOption(npcId, 0, listmenuboss);
             }
             if (boss.getUsername() == "onggianoel") {
-                us.getAvatarService().serverDialog("bình tĩnh ông cháu ơi");
+                us.getAvatarService().serverDialog("bình tĩnh ông cháu");
                 return;
             }
             if (boss.isDefeated()) {
-                us.getAvatarService().serverDialog("boss đã chết");
+                us.getAvatarService().serverDialog("boss đã chết rồi ông cháu ơi !");
                 return;
             }
             if (distance > maxDistance) {
