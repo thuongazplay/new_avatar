@@ -1,5 +1,4 @@
 package avatar.handler;
-
 import java.lang.management.ManagementFactory;
 import java.lang.management.ThreadMXBean;
 
@@ -29,15 +28,11 @@ import avatar.service.GiftcodeService;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 
 public class GlobalHandler {
-    private static final Logger log = LoggerFactory.getLogger(GlobalHandler.class);
     private User us;
     private List<User> lst;
-
     public GlobalHandler(User user) {
 
         this.us = user;
@@ -53,7 +48,7 @@ public class GlobalHandler {
         if (userId >= 2000000000 || userId == 1) {
             //NpcHandler.handlerAction(this.us, userId, menuId, select);
             return;
-        } else {
+        } else{
             switch (userId) {
                 case 5:
                     switch (menuId) {
@@ -102,8 +97,8 @@ public class GlobalHandler {
                             }
                             break;
                         }
-                        case 2: {
-                            if (select == 1) {
+                        case 2:{
+                            if(select == 1){
 
                             }
                         }
@@ -132,13 +127,13 @@ public class GlobalHandler {
     }
 
 
-    private void acceptHenHo() {
+    private void acceptHenHo(){
         String insertQuery = "INSERT INTO marry (idNam, idNu, level, perLevel) VALUES (?, ?, ?, ?)";
-        int idNvNam, idNu;
-        if (this.us.getGender() == 1) {
+        int idNvNam,idNu;
+        if(this.us.getGender() == 1){
             idNvNam = this.us.getId();
             idNu = this.us.getIdUsHenHo();
-        } else {
+        }else {
             idNvNam = this.us.getIdUsHenHo();
             idNu = this.us.getId();
         }
@@ -158,11 +153,11 @@ public class GlobalHandler {
         int userId = ms.reader().readInt();
         byte menuId = ms.reader().readByte();
         String text = ms.reader().readUTF();
-        System.out.println("HandleTextBox: user: " + userId + " menu: " + menuId + " Text: " + text);
+        System.out.println("HandleTextBox: user: " + userId + " menu: " + menuId + " Text: "+ text);
         switch (menuId) {
             case 100:
                 String nameU = text;
-                if (nameU.equals(us.getUsername())) {
+                if(nameU.equals(us.getUsername())){
                     this.us.getAvatarService().serverDialog("không chơi tự sướng nha b");
                     return;
                 }
@@ -183,11 +178,11 @@ public class GlobalHandler {
                         try (ResultSet rs = psCheck.executeQuery()) {
                             if (rs.next() && rs.getInt(1) == 0) {
                                 UserManager.users.forEach(user -> {
-                                    if (user.getUsername().equals(nameU)) {
+                                    if(user.getUsername().equals(nameU)){
                                         this.us.getAvatarService().serverDialog("ok gửi lời mới hẹn hò tới " + nameU);
                                         this.us.setIdUsHenHo(user.getId());
                                         user.setIdUsHenHo(this.us.getId());
-                                        user.getAvatarService().sendTextBoxPopup(user.getId(), 101, "Bạn có muốn hẹn hò với " + us.getUsername() + " không ? nếu muốn thì trả lời ok hoặc yes", 1);
+                                        user.getAvatarService().sendTextBoxPopup(user.getId(), 101, "Bạn có muốn hẹn hò với "+us.getUsername() +" không ? nếu muốn thì trả lời ok hoặc yes", 1);
                                     }
                                 });
                             } else {
@@ -210,12 +205,12 @@ public class GlobalHandler {
                 break;
             case 101:
                 try {
-                    if (text.equals("ok") || text.equals("yes")) {
+                    if(text.equals("ok")||text.equals("yes")){
                         acceptHenHo();
                         UserManager.users.forEach(user -> {
-                            if (user.getId() == us.getIdUsHenHo()) {
+                            if(user.getId() == us.getIdUsHenHo()){
                                 user.getAvatarService().serverDialog("Bạn đã hẹn hò thành công với " + us.getUsername());
-                                us.getAvatarService().serverDialog("Bạn đã hẹn hò thành công với " + user.getUsername());
+                                us.getAvatarService().serverDialog("Bạn đã hẹn hò thành công với "+ user.getUsername());
 
                                 user.setWearingMarry(us.getWearing());
                                 user.setNamehh(us.getUsername());
@@ -223,10 +218,10 @@ public class GlobalHandler {
                                 us.setNamehh(user.getUsername());
                             }
                         });
-                    } else {
+                    }else{
 
                     }
-                } catch (Exception e) {
+                }catch (Exception e){
                     e.printStackTrace();
                 }
                 break;
@@ -245,12 +240,11 @@ public class GlobalHandler {
                 }
                 break;
             case 20:
-                GiftcodeService.gI().handleGiftcode(this.us, text);
+                GiftcodeService.gI().handleGiftcode(this.us,text);
                 break;
             case 98:
                 if (Integer.parseInt(text) == 1) {
                     UserManager.users.forEach(user -> {
-                        log.info("Đang chuẩn bị bảo trì");
                         user.getAvatarService().serverInfo((String.format("ad : bảo trì sau 2p vui lòng off để tránh mất item")));
                         user.getAvatarService().serverDialog("bảo trì sau 2p vui lòng off : v");
                     });
@@ -284,13 +278,14 @@ public class GlobalHandler {
                     // In kết quả
                     System.out.println("Username: " + usernamePart);
                     System.out.println("Nhận: " + luongup);
-                    if (luongup > 0 && luongup < 2000000000) {
+                    if(luongup>0 && luongup<2000000000){
                         for (int i = 0; i < lst.stream().count(); i++) {
-                            if (lst.get(i).getUsername().equals(usernamePart)) {
-                                if ((lst.get(i).getXu() + luongup) > 2000000000) {
+                            if(lst.get(i).getUsername().equals(usernamePart)){
+                                if((lst.get(i).getXu()+luongup) > 2000000000) {
                                     us.getAvatarService().serverDialog("Tài khoản đã vượt quá 2 tỉ lượng");
-                                } else {
-                                    lst.get(i).updateLuong((int) luongup);
+                                }
+                                else {
+                                    lst.get(i).updateLuong((int)luongup);
                                     lst.get(i).getAvatarService().updateMoney(1);
                                     String content = "admin : Bạn nhận được " + luongup + " lượng";
                                     lst.get(i).getAvatarService().SendTabmsg(content);
@@ -300,7 +295,7 @@ public class GlobalHandler {
                                 }
                             }
                         }
-                    } else {
+                    }else{
                         us.getAvatarService().serverDialog("Số lượng phải lớn hơn 0 và nhỏ hơn 2 tỉ");
                     }
                 } catch (NumberFormatException e) {
@@ -318,12 +313,13 @@ public class GlobalHandler {
                     // In kết quả
                     System.out.println("Username: " + usernamePart);
                     System.out.println("Nhận: " + xuup);
-                    if (xuup > 0 && xuup < 2000000000) {
+                    if(xuup>0 && xuup<2000000000){
                         for (int i = 0; i < lst.stream().count(); i++) {
-                            if (lst.get(i).getUsername().equals(usernamePart)) {
-                                if ((lst.get(i).getXu() + xuup) > 2000000000) {
+                            if(lst.get(i).getUsername().equals(usernamePart)){
+                                if((lst.get(i).getXu()+xuup) > 2000000000) {
                                     us.getAvatarService().serverDialog("Tài khoản đã vượt quá 2 tỉ xu");
-                                } else {
+                                }
+                                else {
                                     lst.get(i).updateXu(xuup);
                                     lst.get(i).getAvatarService().updateMoney(0);
                                     String content = "admin : Bạn nhận được " + xuup + " xu";
@@ -334,7 +330,7 @@ public class GlobalHandler {
                                 }
                             }
                         }
-                    } else {
+                    }else{
                         us.getAvatarService().serverDialog("Số xu phải lớn hơn 0 và nhỏ hơn 2 tỉ");
                     }
                 } catch (NumberFormatException e) {
@@ -352,10 +348,10 @@ public class GlobalHandler {
                     // In kết quả
                     System.out.println("ID: " + idItem);
                     System.out.println("Username: " + usernamePart);
-                    if ((short) idItem > 0 && (short) idItem < 9999) {
+                    if((short) idItem>0 && (short) idItem<9999){
                         Item item = new Item(idItem, -1, -0);
                         for (int i = 0; i < lst.stream().count(); i++) {
-                            if (lst.get(i).getUsername().equals(usernamePart)) {
+                            if(lst.get(i).getUsername().equals(usernamePart)){
                                 lst.get(i).addItemToChests(item);
                                 String content = "admin : Bạn được tặng " + item.getPart().getName();
                                 lst.get(i).getAvatarService().SendTabmsg(content);
@@ -364,7 +360,7 @@ public class GlobalHandler {
                                 us.getAvatarService().serverDialog("Đã nhận " + item.getPart().getName() + " vào rương của bạn");
                             }
                         }
-                    } else {
+                    }else{
                         us.getAvatarService().serverDialog("id lớn hơn 2000 và nhỏ hơn 6795");
                     }
                 } catch (NumberFormatException e) {
@@ -393,33 +389,23 @@ public class GlobalHandler {
                 break;
             case 10:
                 try {
-                    if (Integer.parseInt(text) == 1) {
-                        UserManager.users.forEach(user -> {
-                            user.getAvatarService().serverInfo((String.format("ad : bảo trì sau 2p vui lòng thoát game để tránh lỗi")));
-                            user.getAvatarService().serverDialog("bảo trì sau 2p vui lòng thoát game : v");
-                        });
-                        new Thread(() -> {
-                            try {
-                                Thread.sleep(120_000);
 
-                                List<Integer> ids = new ArrayList<>();
-                                for (User us : lst) {
-                                    ids.add(us.getId());
-                                }
+                    //save data account
+                    List<Integer> ids = new ArrayList<>();
 
-                                for (Integer id : ids) {
-                                    try {
-                                        UserManager.getInstance().find(id).session.close();
-                                    } catch (Exception e) {
-                                        // Ghi log nếu cần
-                                        e.printStackTrace();
-                                    }
-                                }
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-                        }).start();
+                    for (User us : lst) {
+                        ids.add(us.getId());
                     }
+                    for (Integer id : ids) {
+                        try
+                        {
+                            UserManager.getInstance().find(id).session.close();
+
+                        }catch (Exception e) {
+
+                        }
+                    }
+
                 } catch (NumberFormatException e) {
                     us.getAvatarService().serverDialog("invalid input, item code must be number");
                 }
@@ -442,7 +428,7 @@ public class GlobalHandler {
                         ThreadMXBean threadMXBean = ManagementFactory.getThreadMXBean();
                         int threadCount = threadMXBean.getThreadCount();
                         System.out.println("Number of threads: " + threadCount);
-                        us.getAvatarService().serverDialog("theard = " + threadCount);
+                        us.getAvatarService().serverDialog("theard = "+threadCount);
                     }
 
                 } catch (NumberFormatException e) {
@@ -459,6 +445,9 @@ public class GlobalHandler {
         byte[] image = Avatar.getFile(folder + "cityMap.png");
         byte[] map27 = Avatar.getFile(folder + "mapdata_27.dat");
         byte[] map_bg = Avatar.getFile(folder + "bg/27.png");
+
+
+
 
 
         Message ms = new Message(-93);
