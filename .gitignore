@@ -38,3 +38,6 @@ res/
 
 ### Mac OS ###
 .DS_Store
+
+#Log
+logs/
