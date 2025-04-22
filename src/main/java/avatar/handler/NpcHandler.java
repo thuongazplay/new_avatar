@@ -391,7 +391,8 @@ public class NpcHandler {
                     us.getAvatarService().openMenuOption(npcId, 0, menu);
                     break;
                 }
-                
+
+
                 case NpcName.PHI_HANH_GIA: {
                     List<Menu> menu = new ArrayList<>();
                         Menu phg = Menu.builder().name("Mua đá vũ trụ").action(() -> {
@@ -407,9 +408,8 @@ public class NpcHandler {
                 case NpcName.NHAN_AI: {
                     List<Menu> menu = new ArrayList<>();
                     menu.add(Menu.builder().name("Mua trái tim").action(() -> {
-                        ShopNpcHandler.displayUI(us, PHI_HANH_GIA, 2806,2807,2808,2809,2810,3129,3130,3131,3132,3133,5144,5145,5146,5147,5148);
-                    }).build());
-                    menu.add(Menu.builder().name("Nâng cấp trái tim").action(() -> {
+                        ShopTradeHandler.displayUI(us,0, 1214,5100);
+
                         
                     }).build());
                     menu.add(Menu.builder().name("Thoát").id(npcId).build());
@@ -417,7 +417,20 @@ public class NpcHandler {
                     us.getAvatarService().openMenuOption(npcId, 0, menu);
                     break;
                 }
-                
+
+//                taskNpc: đổi vật phẩm dùng gì đổi, viết các điều kiện
+                case NpcName.DUC: {
+                    List<Menu> menu = new ArrayList<>();
+                    menu.add(Menu.builder().name("Mua mũ lưỡi chai").action(() -> {
+                        ShopTradeHandler.displayUI(us,0, 1214,5217);
+
+
+                    }).build());
+                    menu.add(Menu.builder().name("Thoát").id(npcId).build());
+                    us.setMenus(menu);
+                    us.getAvatarService().openMenuOption(npcId, 0, menu);
+                    break;
+                }
                 case NpcName.THO_REN: {
                     List<Menu> menu = new ArrayList<>();
                         Menu phg = Menu.builder().name("Mua vật phẩm").action(() -> {
@@ -870,6 +883,8 @@ public class NpcHandler {
                         .build()
         );
     }
+
+
 
     public static List<Menu> listItemUpgrade(int npcId, User us, byte type) {
         //String npcName = "Thợ KH";

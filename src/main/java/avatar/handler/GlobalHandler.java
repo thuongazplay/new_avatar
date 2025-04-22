@@ -266,20 +266,11 @@ public class GlobalHandler {
 
                             Thread.sleep(30_000);
 
-                            // Disconnect user game
-                            List<Integer> ids = new ArrayList<>();
-                            for (User us : lst) {
-                                ids.add(us.getId());
-                            }
 
-                            for (Integer id : ids) {
-                                try {
-                                    UserManager.getInstance().find(id).session.close();
-                                } catch (Exception e) {
-                                    // Ghi log nếu cần
-                                    e.printStackTrace();
-                                }
-                            }
+                            lst.forEach(user -> {
+                                UserManager.getInstance().find(user.getId()).session.close();
+                            });
+
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }

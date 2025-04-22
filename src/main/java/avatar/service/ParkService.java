@@ -204,6 +204,8 @@ public class ParkService extends Service {
                     this.session.user.addItemToChests(moi);
                     this.session.user.updateXu(-30);
                     this.session.user.getAvatarService().updateMoney(0);
+                    this.session.user.getAvatarService().serverDialog("tự động mua mô -30xu");
+
                 }else {
                     this.session.user.getAvatarService().serverDialog("Hết mồi rồi sếp");
                     return;
