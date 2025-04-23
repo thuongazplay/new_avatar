@@ -69,6 +69,14 @@ public class Map {
             Logger.getLogger(Map.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    public Zone getZoneById(int id) {
+        for (Zone z : this.zones) {
+            if (z.getId() == id) {
+                return z;
+            }
+        }
+        return null;
+    }
 
     public void update() {
 

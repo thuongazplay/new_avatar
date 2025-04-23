@@ -50,10 +50,10 @@ public class Boss extends User {
 
         //tọa độ boss dichuyeeren
         List<int[]> map11 = Arrays.asList(
-                new int[]{182, 121},
-                new int[]{282, 142},
-                new int[]{282, 88},
-                new int[]{326, 150}
+
+                new int[]{200, 150},
+                new int[]{326, 20},
+                new int[]{100, 100}
         );
         zoneCoordinates.put(11, map11);
         List<int[]> map7 = Arrays.asList(
@@ -342,6 +342,8 @@ public class Boss extends User {
                     .send();
         });
     }
+
+
     // Gửi hiệu ứng cho người chơi trong khu vực
     public synchronized void hanlderNhatHopQua(User boss, User us) throws IOException {
         us.getAvatarService().serverDialog("bạn đã nhặt được hộp quà");
@@ -373,7 +375,7 @@ public class Boss extends User {
         assignRandomItemToBoss(boss);
         boss.setHP(hp);
         if(boss.getWearing().get(1).getId() == 5112){
-            boss.setHP(hp+90000);
+//            boss.setHP(hp+90000);
             List<String> chatMessages = Arrays.asList("gãi ngứa hả tên kia", "Mau nộp kẹo cho taaaa");
             ((Boss) boss).setTextChats(chatMessages);
         }
@@ -447,7 +449,7 @@ public class Boss extends User {
 
     //đồ của boss
     private void assignRandomItemToBoss(User boss) {
-        List<Integer> itemIds = Arrays.asList(0,5112, 2469, 2470,6428,6431,4304);//sen bo hung
+        List<Integer> itemIds = Arrays.asList(0,5112);//sen bo hung
         List<Integer> itemIds1 = Arrays.asList(0,2468, 2469, 2470,2282,4304);//ma bu
         List<Integer> itemIds2 = Arrays.asList(0,8,2471, 2472, 2473,3495,4304);//ma bu map
         List<Integer> itemIds3 = Arrays.asList(10, 2049, 2050, 2051);
@@ -461,16 +463,17 @@ public class Boss extends User {
 
         Map<List<Integer>, String> itemListToName = new HashMap<>();
         itemListToName.put(itemIds, "TrumMaBi");
-        itemListToName.put(itemIds1, "MaBi");
-        itemListToName.put(itemIds2, "Frankeinstein");
-        itemListToName.put(itemIds3, "XuongKho");
-        itemListToName.put(itemIds4, "XacUop");
-        itemListToName.put(itemIds5, "TrumXacUop");
+//        itemListToName.put(itemIds1, "MaBi");
+//        itemListToName.put(itemIds2, "Frankeinstein");
+//        itemListToName.put(itemIds3, "XuongKho");
+//        itemListToName.put(itemIds4, "XacUop");
+//        itemListToName.put(itemIds5, "TrumXacUop");
+//
+//        itemListToName.put(itemIds6, "XuongKho");
+//        itemListToName.put(itemIds7, "XacUop");
 
-        itemListToName.put(itemIds6, "XuongKho");
-        itemListToName.put(itemIds7, "XacUop");
-
-        List<List<Integer>> allItemLists = Arrays.asList(itemIds,itemIds1,itemIds2,itemIds3,itemIds4,itemIds5,itemIds6,itemIds7);
+//        List<List<Integer>> allItemLists = Arrays.asList(itemIds,itemIds1,itemIds2,itemIds3,itemIds4,itemIds5,itemIds6,itemIds7);
+        List<List<Integer>> allItemLists = Arrays.asList(itemIds);
         Random random = new Random();
         int randomIndex = random.nextInt(allItemLists.size());
         List<Integer> randomList = allItemLists.get(randomIndex);
@@ -793,4 +796,24 @@ public class Boss extends User {
             addBossToZonePhatQua(boss,boss.bossMapId,randomZone,(short) 0,(short) 0,1);
         }
     }
+    public static void spawnBossAt(int mapId, int zoneId, short x, short y, int hp) {
+        try {
+            Boss boss = new Boss();
+            boss.session = createSession(boss);
+            avatar.play.Map map = MapManager.getInstance().find(mapId);
+            Zone zone = map.getZoneById(zoneId); // đảm bảo Map.java có hàm này
+
+            if (zone == null) {
+                System.err.println("❌ Không tìm thấy khu " + zoneId + " trong bản đồ " + mapId);
+                return;
+            }
+
+            boss.addBossToZone(boss, mapId, zone, x, y, hp);
+            System.out.println("✅ Boss đã được tạo tại map " + mapId + " khu " + zoneId + " tại x=" + x + ", y=" + y);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("❌ Lỗi khi tạo Boss.");
+        }
+    }
+
 }

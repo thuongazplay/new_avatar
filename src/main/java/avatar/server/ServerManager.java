@@ -29,7 +29,7 @@ import java.sql.PreparedStatement;
 import avatar.play.Map;
 import avatar.play.MapManager;
 import avatar.play.NpcManager;
-
+import avatar.model.Boss;
 import java.net.ServerSocket;
 
 public class ServerManager {
@@ -229,11 +229,16 @@ public class ServerManager {
             ServerManager.start = true;
             System.out.println("Start server Success !");
             // Cập nhật map gọi boss
+
+//            duc test
             List<Integer> mapIds = List.of(11, 1, 7, 2, 3, 5, 8);
             for (int mapId : mapIds) {
                 Boss.spawnBossesForMap(mapId, 2);
                 Boss.spawnBossesForMapPhatQua(mapId, 2);
-                
+                if (mapId == 11) {
+                    Boss.spawnBossAt(11, 1, (short)100, (short)100, 100000);
+
+                }
             }
 
             while (ServerManager.start) {
