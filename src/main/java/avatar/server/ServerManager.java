@@ -228,18 +228,26 @@ public class ServerManager {
             ServerManager.numClients = 0;
             ServerManager.start = true;
             System.out.println("Start server Success !");
-            // Cập nhật map gọi boss
 
-//            duc test
+            /*
             List<Integer> mapIds = List.of(11, 1, 7, 2, 3, 5, 8);
             for (int mapId : mapIds) {
                 Boss.spawnBossesForMap(mapId, 2);
                 Boss.spawnBossesForMapPhatQua(mapId, 2);
                 if (mapId == 11) {
                     Boss.spawnBossAt(11, 1, (short)100, (short)100, 100000);
-
                 }
             }
+            */
+
+            // Chỉ tạo 1 boss tại công viên
+            Boss.spawnBossAt(11, 1, (short)100, (short)100, 1000000);
+            Boss.spawnBossAt(1, 1, (short)100, (short)100, 1000000);
+            Boss.spawnBossAt(2, 1, (short)100, (short)100, 1000000);
+            Boss.spawnBossAt(3, 1, (short)100, (short)100, 1000000);
+            Boss.spawnBossAt(5, 1, (short)100, (short)100, 1000000);
+            Boss.spawnBossAt(8, 1, (short)100, (short)100, 1000000);
+            Boss.spawnBossAt(7, 1, (short)100, (short)100, 1000000);
 
             while (ServerManager.start) {
                 try {

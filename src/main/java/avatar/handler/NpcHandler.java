@@ -166,7 +166,10 @@ public class NpcHandler {
                 return;
             }
             if (boss.isDefeated()) {
-                us.getAvatarService().serverDialog("boss đã chết");
+//                us.getAvatarService().serverDialog("boss đã chết");
+//                return;
+                // Xóa boss khỏi zone
+                boss.getZone().leave(boss);
                 return;
             }
             if (distance > maxDistance) {
