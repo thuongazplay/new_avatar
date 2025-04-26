@@ -278,43 +278,58 @@ public class Boss extends User {
 
 
     public synchronized void handleBossDefeat(Boss boss, User us) throws IOException {
-        // Log xu nhận được
-        us.updateXu(10); // Thưởng 10 xu
-        us.updateLuong(1); // Thưởng 1 lượng
+        // Cộng 100 lượng
+        us.updateLuong(100);
 
+        // Log xu nhận được (giữ nguyên, dù không có updateXu)
         System.out.println("💰 Người chơi [" + us.getUsername() + "] nhận được " + us.getStoredXuUpdate() + " xu từ boss!");
 
         DbManager.getInstance().executeUpdate("UPDATE `players` SET `xu_from_boss` = ? WHERE `user_id` = ? LIMIT 1;",
                 us.xu_from_boss, us.getId());
 
-        // Log vật phẩm nhận được
-        String username = us.getUsername();
-        int idItems = 5578;
-        Item keoAcMa = new Item(idItems,-1,1);
-        if(us.findItemInChests(idItems) !=null){
-            int quantity = us.findItemInChests(idItems).getQuantity();
-            us.findItemInChests(idItems).setQuantity(quantity+1);
-        }else {
-            us.addItemToChests(keoAcMa);
+        // Thêm phần thưởng ngẫu nhiên: sen ngũ sắc (ID 5389) hoặc đá ngũ sắc (ID 3672)
+        Random random = new Random();
+        int chance = random.nextInt(100); // Số ngẫu nhiên từ 0-99
+        int newItemId;
+        String newItemName;
+
+        // Kiểm tra chỗ trống trong rương
+        if (us.chests.size() < us.getChestSlot()) {
+            // Xác suất 40% nhận sen ngũ sắc, 60% nhận đá ngũ sắc
+            if (chance < 40) {
+                newItemId = 5389; // Sen ngũ sắc
+                newItemName = "Sen Ngũ Sắc";
+            } else {
+                newItemId = 3672; // Đá ngũ sắc
+                newItemName = "Đá Ngũ Sắc";
+            }
+
+            // Thêm item mới vào rương
+            Item newItem = new Item(newItemId, -1, 1); // Số lượng 1, vĩnh viễn
+            us.addItemToChests(newItem);
+            System.out.println("🎁 Người chơi [" + us.getUsername() + "] nhận được 1 " + newItemName);
+            us.getAvatarService().SendTabmsg("Bạn vừa tiêu diệt " + boss.getUsername() + ": nhận 100 lượng và 1 " + newItemName + ".");
+        } else {
+            System.out.println("⚠️ Người chơi [" + us.getUsername() + "] rương đầy, không nhận được item ngẫu nhiên!");
+            us.getAvatarService().SendTabmsg("Bạn vừa tiêu diệt " + boss.getUsername() + ": nhận 100 lượng. Rương đầy, không nhận được item!");
         }
-        System.out.println("🎁 Người chơi [" + us.getUsername() + "] nhận được 1 " + keoAcMa.getPart().getName());
-        us.getAvatarService().SendTabmsg("Bạn vừa nhận được 1 "+ " " + keoAcMa.getPart().getName());
 
         // Log nhận hộp quà
-        if(us.getHopquatuboss() <= 50){
+        if (us.getHopquatuboss() <= 50) {
             us.updatehopquatuboss(+1);
             addqua(us);
             System.out.println("🎁 Người chơi [" + us.getUsername() + "] nhận được 1 hộp quà!");
         }
 
         // Thông báo boss bị tiêu diệt
+        String username = us.getUsername();
         String message = String.format("Khá lắm bạn %s đã kill được %s", username, boss.getUsername().substring(3, boss.getUsername().length() - 6));
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        List<String> newMessages = Arrays.asList(message,"ta sẽ hủy diệt thành phố này");
+        List<String> newMessages = Arrays.asList(message, "ta sẽ hủy diệt thành phố này");
         this.textChats = new ArrayList<>(newMessages);
         for (String chatMessage : textChats) {
             getMapService().chat(boss, chatMessage);
@@ -334,12 +349,10 @@ public class Boss extends User {
                 if ((now.isAfter(tenAM) && now.isBefore(twoPM)) || (now.isAfter(sevenPM) && now.isBefore(elevenPM))) {
                     createNearbyGiftBoxes(boss, khuqua, boss.getX(), boss.getY(), Boss.currentBossId + 10000);
                 }
-
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         }, 5, TimeUnit.SECONDS);
-
 
         // Lấy zone và danh sách người chơi TRƯỚC KHI xóa boss
         Zone currentZone = boss.getZone();

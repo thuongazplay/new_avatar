@@ -190,7 +190,7 @@ public class NpcHandler {
                 System.out.println("Hàm không được kích hoạt ngoài khoảng thời gian từ 6h sáng đến 11h đêm.");
             }
             us.updateXu(+us.getDameToXu());
-            us.updateLuong(+10);
+            us.updateLuong(0);
             us.getAvatarService().updateMoney(0);
 
             List<User> lstUs = us.getZone().getPlayers();
