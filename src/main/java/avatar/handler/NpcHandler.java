@@ -422,18 +422,34 @@ public class NpcHandler {
                 }
 
 //                taskNpc: đổi vật phẩm dùng gì đổi, viết các điều kiện
-                case NpcName.DUC: {
+                case PHU_THUY: {
+
+
                     List<Menu> menu = new ArrayList<>();
-                    menu.add(Menu.builder().name("Mua mũ lưỡi chai").action(() -> {
-                        ShopTradeHandler.displayUI(us,0, 1214,5217);
 
-
+                    menu.add(Menu.builder().name("Shop sen ngũ sắc").action(() -> { //5389 : sen ngũ sắc
+                        ShopTradeHandler.displayUI(us, 3, 1214, 4442 );
                     }).build());
+
+                    menu.add(Menu.builder().name("Shop thẻ vip").action(() -> {
+                        ShopTradeHandler.displayUI(us, 4,
+                                1214, 4280, 5620, 5621, 4276);
+                    }).build());
+
+                    menu.add(Menu.builder().name("Nâng cấp bằng đá ngũ sắc")
+                            .id(npcId)
+                            .menus(listItemUpgradeDNS(npcId, us, BossShopHandler.SELECT_DNS))
+                            .build());
+
                     menu.add(Menu.builder().name("Thoát").id(npcId).build());
+
                     us.setMenus(menu);
                     us.getAvatarService().openMenuOption(npcId, 0, menu);
                     break;
                 }
+
+
+
                 case NpcName.THO_REN: {
                     List<Menu> menu = new ArrayList<>();
                         Menu phg = Menu.builder().name("Mua vật phẩm").action(() -> {
@@ -1079,6 +1095,43 @@ public class NpcHandler {
                                 Menu.builder().name("Tóc Siêu Xaya").action(() -> {
                                     BossShopHandler.displayUI(us, type, 2019);
                                 }).build()
+                        ))
+                        .build()
+        );
+    }
+    public static List<Menu> listItemUpgradeDNS(int npcId, User us, byte type) {
+        return List.of(
+                Menu.builder().name("Đổi nhân vật")
+                        .menus(List.of(
+                                Menu.builder().name("Vệ Long Lam Tinh").id(npcId)
+                                        .menus(List.of(
+                                                Menu.builder().name("Vệ Long Lam Tinh (cấp 1)").action(() -> {
+                                                    BossShopHandler.displayUI(us, type, 20, 20, 5465, 20);
+                                                }).build(),
+                                                Menu.builder().name("Vệ Long Lam Tinh (cấp 2)").action(() -> {
+                                                    BossShopHandler.displayUI(us, type, 20, 20, 5466, 20);
+                                                }).build(),
+                                                Menu.builder().name("Vệ Long Lam Tinh (cấp 3)").action(() -> {
+                                                    BossShopHandler.displayUI(us, type, 20, 20, 5467, 20);
+                                                }).build(),
+                                                Menu.builder().name("Cánh Vệ Long Lam Tinh").action(() -> {
+                                                    BossShopHandler.displayUI(us, type, 20, 20, 5468, 20);
+                                                }).build(),
+                                                Menu.builder().name("Thoát").id(npcId).build()
+                                        ))
+                                        .build(),
+                                Menu.builder().name("Super Saiyan Rose").id(npcId)
+                                        .menus(List.of(
+                                                Menu.builder().name("Super Saiyan Rose (cấp 1)").action(() -> {
+                                                    BossShopHandler.displayUI(us, type, 50, 500, 4443, 20);
+                                                }).build(),
+                                                Menu.builder().name("Super Saiyan Rose (cấp 2)").action(() -> {
+                                                    BossShopHandler.displayUI(us, type, 50, 500, 4444, 20);
+                                                }).build(),
+                                                Menu.builder().name("Thoát").id(npcId).build()
+                                        ))
+                                        .build(),
+                                Menu.builder().name("Thoát").id(npcId).build()
                         ))
                         .build()
         );
