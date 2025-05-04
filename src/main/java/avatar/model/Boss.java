@@ -282,11 +282,17 @@ public class Boss extends User {
         us.updateLuong(100);
 
         // Log xu nhận được (giữ nguyên, dù không có updateXu)
-        System.out.println("💰 Người chơi [" + us.getUsername() + "] nhận được " + us.getStoredXuUpdate() + " xu từ boss!");
+        System.out.println("Người chơi [" + us.getUsername() + "] nhận được " + us.getStoredXuUpdate() + " xu từ boss!");
 
-        DbManager.getInstance().executeUpdate("UPDATE `players` SET `xu_from_boss` = ? WHERE `user_id` = ? LIMIT 1;",
-                us.xu_from_boss, us.getId());
+//        DbManager.getInstance().executeUpdate("UPDATE `players` SET `xu_from_boss` = ? WHERE `user_id` = ? LIMIT 1;",
+//                us.xu_from_boss, us.getId());
 
+        DbManager.getInstance().executeUpdate(
+                "UPDATE `players` SET `xu_from_boss` = `xu_from_boss` + 1 WHERE `user_id` = ? LIMIT 1;",
+                us.getId()
+        );
+
+        System.out.println(" user : "+us.getId() +" được cộng 1 xu_from_boss");
         // Thêm phần thưởng ngẫu nhiên: sen ngũ sắc (ID 5389) hoặc đá ngũ sắc (ID 3672)
         Random random = new Random();
         int chance = random.nextInt(100); // Số ngẫu nhiên từ 0-99
@@ -307,10 +313,10 @@ public class Boss extends User {
             // Thêm item mới vào rương
             Item newItem = new Item(newItemId, -1, 1); // Số lượng 1, vĩnh viễn
             us.addItemToChests(newItem);
-            System.out.println("🎁 Người chơi [" + us.getUsername() + "] nhận được 1 " + newItemName);
+            System.out.println("Người chơi [" + us.getUsername() + "] nhận được 1 " + newItemName);
             us.getAvatarService().SendTabmsg("Bạn vừa tiêu diệt " + boss.getUsername() + ": nhận 100 lượng và 1 " + newItemName + ".");
         } else {
-            System.out.println("⚠️ Người chơi [" + us.getUsername() + "] rương đầy, không nhận được item ngẫu nhiên!");
+            System.out.println("Người chơi [" + us.getUsername() + "] rương đầy, không nhận được item ngẫu nhiên!");
             us.getAvatarService().SendTabmsg("Bạn vừa tiêu diệt " + boss.getUsername() + ": nhận 100 lượng. Rương đầy, không nhận được item!");
         }
 
@@ -318,7 +324,7 @@ public class Boss extends User {
         if (us.getHopquatuboss() <= 50) {
             us.updatehopquatuboss(+1);
             addqua(us);
-            System.out.println("🎁 Người chơi [" + us.getUsername() + "] nhận được 1 hộp quà!");
+            System.out.println("Người chơi [" + us.getUsername() + "] nhận được 1 hộp quà!");
         }
 
         // Thông báo boss bị tiêu diệt
@@ -336,23 +342,23 @@ public class Boss extends User {
             textChats.remove(chatMessage);
         }
 
-        // Xử lý tạo quà xung quanh boss
-        Zone khuqua = boss.getZone();
-        scheduler.schedule(() -> {
-            try {
-                LocalTime now = LocalTime.now();
-                LocalTime tenAM = LocalTime.of(10, 0);
-                LocalTime twoPM = LocalTime.of(14, 0);
-                LocalTime sevenPM = LocalTime.of(17, 0);
-                LocalTime elevenPM = LocalTime.of(23, 0);
-
-                if ((now.isAfter(tenAM) && now.isBefore(twoPM)) || (now.isAfter(sevenPM) && now.isBefore(elevenPM))) {
-                    createNearbyGiftBoxes(boss, khuqua, boss.getX(), boss.getY(), Boss.currentBossId + 10000);
-                }
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }, 5, TimeUnit.SECONDS);
+//        // Xử lý tạo quà xung quanh boss
+//        Zone khuqua = boss.getZone();
+//        scheduler.schedule(() -> {
+//            try {
+//                LocalTime now = LocalTime.now();
+//                LocalTime tenAM = LocalTime.of(10, 0);
+//                LocalTime twoPM = LocalTime.of(14, 0);
+//                LocalTime sevenPM = LocalTime.of(17, 0);
+//                LocalTime elevenPM = LocalTime.of(23, 0);
+//
+//                if ((now.isAfter(tenAM) && now.isBefore(twoPM)) || (now.isAfter(sevenPM) && now.isBefore(elevenPM))) {
+//                    createNearbyGiftBoxes(boss, khuqua, boss.getX(), boss.getY(), Boss.currentBossId + 10000);
+//                }
+//            } catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
+//        }, 5, TimeUnit.SECONDS);
 
         // Lấy zone và danh sách người chơi TRƯỚC KHI xóa boss
         Zone currentZone = boss.getZone();
@@ -366,7 +372,7 @@ public class Boss extends User {
         // Thông báo cho tất cả người chơi trong khu vực
         players.forEach(player -> {
             if (player != null && player.session != null) {
-                player.getAvatarService().serverInfo("Boss sẽ hồi sinh sau 20 giây!");
+                player.getAvatarService().serverInfo("Boss sẽ hồi sinh sau 20 phút!");
             }
         });
 
@@ -385,9 +391,9 @@ public class Boss extends User {
 
                     spawnBossAt(mapIdToSpawn, 0, (short)coordinate[0], (short)coordinate[1],
                             Utils.nextInt(50000, 100000));
-                    System.out.println("🔄 Boss đã hồi sinh tại map " + mapIdToSpawn + "!");
+                    System.out.println("Boss đã hồi sinh tại map " + mapIdToSpawn + "!");
                 } else {
-                    System.out.println("⚠️ Tất cả map đã có đủ boss!");
+                    System.out.println("Tất cả map đã có đủ boss!");
                 }
 
                 // Thông báo cho tất cả người chơi
@@ -399,7 +405,7 @@ public class Boss extends User {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }, 20, TimeUnit.SECONDS);
+        }, 20, TimeUnit.MINUTES);
 
     }
 
@@ -757,7 +763,7 @@ public class Boss extends User {
         for (int i = 0; i < numBosses; i++) {
             Boss boss = new Boss(); // Tạo boss mới
             //List<String> chatMessages = Arrays.asList("YAAAA", "YOOOO");
-            //((Boss) boss).setTextChats(chatMessages);
+//            ((Boss) boss).setTextChats(chatMessages);
             boss.session = createSession(boss);
 
 //            Zone randomZone = zones.get(random.nextInt(zones.size()));

@@ -508,8 +508,10 @@ public class User {
                 boss.handleBossDefeat(boss, us);
             }
         }
-        System.out.println("💥 Boss [" + boss.getUsername() + "] bị đánh! HP còn lại: " + this.HP);
-        System.out.println("⚔ Người chơi [" + us.getUsername() + "] gây sát thương: " + Math.abs(dame));
+        String hpMessage = "Tao còn " + this.HP + " máu nè con";
+        boss.getMapService().chat(boss, hpMessage);
+        System.out.println("Boss [" + boss.getUsername() + "] bị đánh! HP còn lại: " + this.HP);
+        System.out.println("Người chơi [" + us.getUsername() + "] gây sát thương: " + Math.abs(dame));
 
     }
     public synchronized void updateSpam(long spams, Boss boss, User us) throws IOException {

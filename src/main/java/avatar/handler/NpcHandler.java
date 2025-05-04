@@ -190,7 +190,7 @@ public class NpcHandler {
                 System.out.println("Hàm không được kích hoạt ngoài khoảng thời gian từ 6h sáng đến 11h đêm.");
             }
             us.updateXu(+us.getDameToXu());
-            us.updateLuong(0);
+//            us.updateLuong(0);
             us.getAvatarService().updateMoney(0);
 
             List<User> lstUs = us.getZone().getPlayers();
@@ -1101,17 +1101,15 @@ public class NpcHandler {
     }
     public static List<Menu> listItemUpgradeDNS(int npcId, User us, byte type) {
         return List.of(
-                Menu.builder().name("Đổi nhân vật")
-                        .menus(List.of(
                                 Menu.builder().name("Vệ Long Lam Tinh").id(npcId)
                                         .menus(List.of(
-                                                Menu.builder().name("Vệ Long Lam Tinh (cấp 1)").action(() -> {
+                                                Menu.builder().name("Mũ Vệ Long Lam Tinh").action(() -> {
                                                     BossShopHandler.displayUI(us, type, 20, 20, 5465, 20);
                                                 }).build(),
-                                                Menu.builder().name("Vệ Long Lam Tinh (cấp 2)").action(() -> {
+                                                Menu.builder().name("áo Vệ Long Lam Tinh").action(() -> {
                                                     BossShopHandler.displayUI(us, type, 20, 20, 5466, 20);
                                                 }).build(),
-                                                Menu.builder().name("Vệ Long Lam Tinh (cấp 3)").action(() -> {
+                                                Menu.builder().name("Quần Vệ Long Lam Tinh").action(() -> {
                                                     BossShopHandler.displayUI(us, type, 20, 20, 5467, 20);
                                                 }).build(),
                                                 Menu.builder().name("Cánh Vệ Long Lam Tinh").action(() -> {
@@ -1122,18 +1120,17 @@ public class NpcHandler {
                                         .build(),
                                 Menu.builder().name("Super Saiyan Rose").id(npcId)
                                         .menus(List.of(
-                                                Menu.builder().name("Super Saiyan Rose (cấp 1)").action(() -> {
+                                                Menu.builder().name("áo Super Saiyan Rose").action(() -> {
                                                     BossShopHandler.displayUI(us, type, 50, 500, 4443, 20);
                                                 }).build(),
-                                                Menu.builder().name("Super Saiyan Rose (cấp 2)").action(() -> {
+                                                Menu.builder().name("Quần Super Saiyan Rose").action(() -> {
                                                     BossShopHandler.displayUI(us, type, 50, 500, 4444, 20);
                                                 }).build(),
                                                 Menu.builder().name("Thoát").id(npcId).build()
                                         ))
                                         .build(),
                                 Menu.builder().name("Thoát").id(npcId).build()
-                        ))
-                        .build()
+
         );
     }
 
