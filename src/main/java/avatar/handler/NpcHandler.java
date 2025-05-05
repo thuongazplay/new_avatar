@@ -441,6 +441,12 @@ public class NpcHandler {
                             .menus(listItemUpgradeDNS(npcId, us, BossShopHandler.SELECT_DNS))
                             .build());
 
+                    menu.add(
+
+
+                    Menu.builder().name("Nhập Giftcode").action(() -> {
+                        us.getAvatarService().sendTextBoxPopup(us.getId(), 20, "Giftcode:", 1);
+                    }).build());
                     menu.add(Menu.builder().name("Thoát").id(npcId).build());
 
                     us.setMenus(menu);

@@ -31,6 +31,7 @@ import avatar.play.MapManager;
 import avatar.play.NpcManager;
 import avatar.model.Boss;
 import java.net.ServerSocket;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class ServerManager {
 
@@ -229,25 +230,23 @@ public class ServerManager {
             ServerManager.start = true;
             System.out.println("Start server Success !");
 
-            /*
+
             List<Integer> mapIds = List.of(11, 1, 7, 2, 3, 5, 8);
             for (int mapId : mapIds) {
-                Boss.spawnBossesForMap(mapId, 2);
-                Boss.spawnBossesForMapPhatQua(mapId, 2);
-                if (mapId == 11) {
-                    Boss.spawnBossAt(11, 1, (short)100, (short)100, 100000);
-                }
-            }
-            */
+                int randomZoneId = ThreadLocalRandom.current().nextInt(0, 10); // [1, 10]
+                Boss.spawnBossAt(mapId, randomZoneId, (short)100, (short)100, 1000000);
 
-            // Chỉ tạo 1 boss tại công viên
-            Boss.spawnBossAt(11, 1, (short)100, (short)100, 1000000);
-            Boss.spawnBossAt(1, 1, (short)100, (short)100, 1000000);
-            Boss.spawnBossAt(2, 1, (short)100, (short)100, 1000000);
-            Boss.spawnBossAt(3, 1, (short)100, (short)100, 1000000);
-            Boss.spawnBossAt(5, 1, (short)100, (short)100, 1000000);
-            Boss.spawnBossAt(8, 1, (short)100, (short)100, 1000000);
-            Boss.spawnBossAt(7, 1, (short)100, (short)100, 1000000);
+            }
+
+
+//            // Chỉ tạo 1 boss tại công viên
+//            Boss.spawnBossAt(11, 1, (short)100, (short)100, 1000000);
+//            Boss.spawnBossAt(1, 1, (short)100, (short)100, 1000000);
+//            Boss.spawnBossAt(2, 1, (short)100, (short)100, 1000000);
+//            Boss.spawnBossAt(3, 1, (short)100, (short)100, 1000000);
+//            Boss.spawnBossAt(5, 1, (short)100, (short)100, 1000000);
+//            Boss.spawnBossAt(8, 1, (short)100, (short)100, 1000000);
+//            Boss.spawnBossAt(7, 1, (short)100, (short)100, 1000000);
 
             while (ServerManager.start) {
                 try {

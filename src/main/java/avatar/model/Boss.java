@@ -16,10 +16,7 @@ import java.net.Socket;
 import java.security.SecureRandom;
 import java.time.LocalTime;
 import java.util.*;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 import java.util.List;
 import java.util.Arrays;
 import java.util.stream.Collectors;
@@ -362,6 +359,7 @@ public class Boss extends User {
 
         // Lấy zone và danh sách người chơi TRƯỚC KHI xóa boss
         Zone currentZone = boss.getZone();
+
         List<User> players = new ArrayList<>(currentZone.getPlayers());
 
         // Xóa boss khỏi map ngay lập tức
@@ -388,10 +386,10 @@ public class Boss extends User {
                     int[] coordinate = coordinates.isEmpty() ?
                             new int[]{100, 100} :
                             coordinates.get(new Random().nextInt(coordinates.size()));
-
-                    spawnBossAt(mapIdToSpawn, 0, (short)coordinate[0], (short)coordinate[1],
+                    int randomZoneId = ThreadLocalRandom.current().nextInt(0, 10); // [1, 10]
+                    spawnBossAt(mapIdToSpawn, randomZoneId, (short)coordinate[0], (short)coordinate[1],
                             Utils.nextInt(50000, 100000));
-                    System.out.println("Boss đã hồi sinh tại map " + mapIdToSpawn + "!");
+                    System.out.println("Boss đã hồi sinh tại map " + mapIdToSpawn + "zone " + randomZoneId);
                 } else {
                     System.out.println("Tất cả map đã có đủ boss!");
                 }
@@ -482,7 +480,10 @@ public class Boss extends User {
         try (DataOutputStream dos2 = new DataOutputStream(joinPank)) {
             dos2.writeByte(boss.bossMapId);
             System.err.println("joinmaopboss " + boss.bossMapId);
-            dos2.writeByte(0); // Thay vì random, fix cứng khu 0
+            int randomZoneId = ThreadLocalRandom.current().nextInt(0, 10); // [1, 10]
+            dos2.writeByte(randomZoneId); // Thay vì random, fix cứng khu 0
+
+//            dos2.writeByte(0); // Thay vì random, fix cứng khu 0
             dos2.writeShort(boss.getX());//x
             dos2.writeShort(boss.getY());//y
             dos2.flush();
@@ -884,12 +885,12 @@ public class Boss extends User {
             Zone zone = map.getZoneById(zoneId);
 
             if (zone == null) {
-                System.err.println("❌ Không tìm thấy khu " + zoneId + " trong bản đồ " + mapId);
+                System.err.println("Không tìm thấy khu " + zoneId + " trong bản đồ " + mapId);
                 return;
             }
 
             boss.addBossToZone(boss, mapId, zone, x, y, hp);
-            System.out.println("✅ Boss đã được tạo tại map " + mapId + " khu " + zoneId);
+            System.out.println("Boss đã được tạo tại map " + mapId + " khu " + zoneId);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -927,42 +928,4 @@ public class Boss extends User {
         return bossCount;
     }
 
-    // Phương thức kiểm tra và cân bằng boss cho tất cả map
-    public static void balanceBossPopulation() {
-        Boss temp = new Boss();
-        Map<Integer, Integer> currentBosses = temp.countAllBosses();
-
-        // Tìm tất cả map cần thêm boss
-        List<Integer> mapsNeedingBosses = BOSS_REQUIREMENTS.entrySet().stream()
-                .filter(entry -> currentBosses.get(entry.getKey()) < entry.getValue())
-                .map(Map.Entry::getKey)
-                .collect(Collectors.toList());
-
-        // Spawn boss cho các map thiếu
-        mapsNeedingBosses.forEach(mapId -> {
-            int needed = BOSS_REQUIREMENTS.get(mapId) - currentBosses.get(mapId);
-            for (int i = 0; i < needed; i++) {
-                List<int[]> coords = temp.zoneCoordinates.get(mapId);
-                int[] coord = coords.isEmpty() ?
-                        new int[]{100, 100} :
-                        coords.get(new Random().nextInt(coords.size()));
-
-                spawnBossAt(mapId, 0, (short)coord[0], (short)coord[1],
-                        Utils.nextInt(50000, 100000));
-            }
-        });
-    }
-
-    // Phương thức debug để xem trạng thái boss
-    public static void printBossStatus() {
-        Boss temp = new Boss();
-        Map<Integer, Integer> currentBosses = temp.countAllBosses();
-
-        System.out.println("=== BOSS STATUS ===");
-        BOSS_REQUIREMENTS.forEach((mapId, required) -> {
-            int current = currentBosses.get(mapId);
-            System.out.printf("Map %d: %d/%d boss%n", mapId, current, required);
-        });
-        System.out.println("==================");
-    }
 }
