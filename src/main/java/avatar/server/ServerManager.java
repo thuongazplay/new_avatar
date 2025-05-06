@@ -234,7 +234,9 @@ public class ServerManager {
             List<Integer> mapIds = List.of(11, 1, 7, 2, 3, 5, 8);
             for (int mapId : mapIds) {
                 int randomZoneId = ThreadLocalRandom.current().nextInt(0, 10); // [1, 10]
+//                Boss.spawnBossAt(mapId, randomZoneId, (short)100, (short)100, 1000000);
                 Boss.spawnBossAt(mapId, randomZoneId, (short)100, (short)100, 1000000);
+
 
             }
 

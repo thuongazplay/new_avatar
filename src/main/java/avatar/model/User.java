@@ -88,6 +88,7 @@ public class User {
     public int HP;
     private boolean isDefeated;
     private boolean isSpam;
+
     //hen ho
     private int idUsHenHo;
     private String namehh;

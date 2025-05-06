@@ -310,19 +310,14 @@ public class Boss extends User {
             // Thêm item mới vào rương
             Item newItem = new Item(newItemId, -1, 1); // Số lượng 1, vĩnh viễn
             us.addItemToChests(newItem);
-            System.out.println("Người chơi [" + us.getUsername() + "] nhận được 1 " + newItemName);
+            System.out.println(" Người chơi [" + us.getUsername() + "] nhận được 1 " + newItemName);
             us.getAvatarService().SendTabmsg("Bạn vừa tiêu diệt " + boss.getUsername() + ": nhận 100 lượng và 1 " + newItemName + ".");
         } else {
             System.out.println("Người chơi [" + us.getUsername() + "] rương đầy, không nhận được item ngẫu nhiên!");
             us.getAvatarService().SendTabmsg("Bạn vừa tiêu diệt " + boss.getUsername() + ": nhận 100 lượng. Rương đầy, không nhận được item!");
         }
 
-        // Log nhận hộp quà
-        if (us.getHopquatuboss() <= 50) {
-            us.updatehopquatuboss(+1);
-            addqua(us);
-            System.out.println("Người chơi [" + us.getUsername() + "] nhận được 1 hộp quà!");
-        }
+
 
         // Thông báo boss bị tiêu diệt
         String username = us.getUsername();
@@ -365,12 +360,12 @@ public class Boss extends User {
         // Xóa boss khỏi map ngay lập tức
         boss.getZone().leave(boss);
         boss.session.close();
-        System.out.println("⌛ Boss [" + boss.getUsername() + "] đã biến mất khỏi map!");
+
 
         // Thông báo cho tất cả người chơi trong khu vực
         players.forEach(player -> {
             if (player != null && player.session != null) {
-                player.getAvatarService().serverInfo("Boss sẽ hồi sinh sau 20 phút!");
+                player.getAvatarService().serverInfo("Ngưỡng mộ quá.Người chơi " + us.getUsername() + "đã hạ gục boss !!!");
             }
         });
 
@@ -388,8 +383,7 @@ public class Boss extends User {
                             coordinates.get(new Random().nextInt(coordinates.size()));
                     int randomZoneId = ThreadLocalRandom.current().nextInt(0, 10); // [1, 10]
                     spawnBossAt(mapIdToSpawn, randomZoneId, (short)coordinate[0], (short)coordinate[1],
-                            Utils.nextInt(50000, 100000));
-                    System.out.println("Boss đã hồi sinh tại map " + mapIdToSpawn + "zone " + randomZoneId);
+                            Utils.nextInt(500000, 1000000));
                 } else {
                     System.out.println("Tất cả map đã có đủ boss!");
                 }
@@ -397,7 +391,7 @@ public class Boss extends User {
                 // Thông báo cho tất cả người chơi
                 players.forEach(player -> {
                     if (player != null && player.session != null) {
-                        player.getAvatarService().serverInfo("Boss đã hồi sinh!");
+                        player.getAvatarService().serverInfo("Boss đã hồi sinh, hãy săn đuổi nó !!!");
                     }
                 });
             } catch (Exception e) {
