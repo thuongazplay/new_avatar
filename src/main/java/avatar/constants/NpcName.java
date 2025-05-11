@@ -35,6 +35,8 @@ public class NpcName {
     public static final int PHU_THUY_NGUYEN_TO = 904;
     public static final int NHAN_AI = 905;
     public static final int TOP = 906;
+    public static final int PHU_THUY = 907;
+
 
 
 }

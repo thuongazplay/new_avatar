@@ -17,7 +17,7 @@ public class
 Avatar {
 
 
-
+    
 
     private static Thread T;
     public static void main(String[] args) {

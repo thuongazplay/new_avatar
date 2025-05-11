@@ -88,6 +88,7 @@ public class User {
     public int HP;
     private boolean isDefeated;
     private boolean isSpam;
+
     //hen ho
     private int idUsHenHo;
     private String namehh;
@@ -178,7 +179,7 @@ public class User {
     public boolean isToXong;
     public boolean isHaPhom;
     public List<Integer> lstitemID;
-    
+
     // pet racing
     private Map<Byte, PetInfo> pets = new ConcurrentHashMap<>();
     private AtomicInteger totalPetAmount = new AtomicInteger(0);
@@ -312,8 +313,9 @@ public class User {
         boolean cung = false, maybay = false, haoquanhoalong = false, bang = false, hophong = false;
 // Kiểm tra toàn bộ items nhân vật đang mặc
         for (Item item : wearing) {
-            totalDamage += item.getPart().getLevel();
-
+            int bonusDamage = item.getPart().getLevel();
+            totalDamage += bonusDamage;
+            System.out.println("Total damage after bonus: " + totalDamage);
             // Kiểm tra các item đặc biệt
             cung = cung || item.getId() == 6400;
             maybay = maybay || item.getId() == 4715;
@@ -496,7 +498,7 @@ public class User {
     public synchronized void updateChest_homeSlot(int chestslot) {
         this.chestHomeSlot += (byte) chestslot;
     }
-    
+
     public synchronized void updateHP(long dame, Boss boss, User us) throws IOException {
         this.HP += dame;
         if (HP <= 0) {
@@ -507,6 +509,11 @@ public class User {
                 boss.handleBossDefeat(boss, us);
             }
         }
+        String hpMessage = "Tao còn " + this.HP + " máu nè con";
+        boss.getMapService().chat(boss, hpMessage);
+        System.out.println("Boss [" + boss.getUsername() + "] bị đánh! HP còn lại: " + this.HP);
+        System.out.println("Người chơi [" + us.getUsername() + "] gây sát thương: " + Math.abs(dame));
+
     }
     public synchronized void updateSpam(long spams, Boss boss, User us) throws IOException {
         boss.spam += spams;
@@ -564,25 +571,28 @@ public class User {
     public long getLastTimeSet() {
         return lastTimeSet;
     }
-    
+
     public void addPet(PetInfo pet) {
         pets.put(pet.getPetId(), pet);
         totalPetAmount.addAndGet(pet.getAmount());
     }
-    
+    public int getStoredXuUpdate() {
+        return this.storedXuUpdate;
+    }
+
     public void clearPets() {
         pets.clear();
         totalPetAmount.set(0);
     }
-    
+
     public int getTotalPetAmount() {
         return totalPetAmount.get();
     }
     public Map<Byte, PetInfo> getPets() {
         return pets;
     }
-    
-      public User(String username,String Top,List<Integer> item) {
+
+    public User(String username,String Top,List<Integer> item) {
         this.username = username;
         this.Top = Top;
         this.lstitemID = item;
@@ -682,161 +692,161 @@ public class User {
     }
 
     public void saveFarmData(int userId) throws SQLException {
-    // Chuẩn bị dữ liệu để lưu vào cơ sở dữ liệu
-    JSONArray landData = new JSONArray();
-    DateTimeFormatter formatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
+        // Chuẩn bị dữ liệu để lưu vào cơ sở dữ liệu
+        JSONArray landData = new JSONArray();
+        DateTimeFormatter formatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
 
-    for (LandItem landItem : this.session.user.landItems) {
-        JSONObject landObject = new JSONObject();
-        landObject.put("level", landItem.getlevel());
-        landObject.put("growthTime", landItem.getGrowthTime());
-        landObject.put("type", landItem.getType()); // lao
-        landObject.put("suckhoe", landItem.getSucKhoe()); // skhoe
-        landObject.put("resourceCount", landItem.getResourceCount());
-        landObject.put("isWatered", landItem.isWatered());
-        landObject.put("isFertilized", landItem.isFertilized());
-        landObject.put("isHarvestable", landItem.isHarvestable());
+        for (LandItem landItem : this.session.user.landItems) {
+            JSONObject landObject = new JSONObject();
+            landObject.put("level", landItem.getlevel());
+            landObject.put("growthTime", landItem.getGrowthTime());
+            landObject.put("type", landItem.getType()); // lao
+            landObject.put("suckhoe", landItem.getSucKhoe()); // skhoe
+            landObject.put("resourceCount", landItem.getResourceCount());
+            landObject.put("isWatered", landItem.isWatered());
+            landObject.put("isFertilized", landItem.isFertilized());
+            landObject.put("isHarvestable", landItem.isHarvestable());
 
-        LocalDateTime plantedTime = landItem.getPlantedTime();
-        if (plantedTime != null) {
-            landObject.put("plantedTime", plantedTime.format(formatter));
-        } else {
-            landObject.put("plantedTime", "not_planted");
+            LocalDateTime plantedTime = landItem.getPlantedTime();
+            if (plantedTime != null) {
+                landObject.put("plantedTime", plantedTime.format(formatter));
+            } else {
+                landObject.put("plantedTime", "not_planted");
+            }
+
+            landData.add(landObject);
         }
 
-        landData.add(landObject);
-    }
+        // Dữ liệu cây khế
+        JSONArray starfruilData = new JSONArray();
+        for (Starfruil starfruil : this.session.user.starfruil) {
+            JSONObject starfruilObject = new JSONObject();
+            starfruilObject.put("level", starfruil.getLevel());
+            starfruilObject.put("quantity", starfruil.getQuantity());
+            starfruilObject.put("timeToHarvest", starfruil.getTimeToHarvest());
+            //starfruilObject.put("timeToUpgrade", starfruil.getTimeToUpgrade());
 
-    // Dữ liệu cây khế
-    JSONArray starfruilData = new JSONArray();
-    for (Starfruil starfruil : this.session.user.starfruil) {
-        JSONObject starfruilObject = new JSONObject();
-        starfruilObject.put("level", starfruil.getLevel());
-        starfruilObject.put("quantity", starfruil.getQuantity());
-        starfruilObject.put("timeToHarvest", starfruil.getTimeToHarvest());
-        //starfruilObject.put("timeToUpgrade", starfruil.getTimeToUpgrade());
-        
-        LocalDateTime timeToUpgrade = starfruil.getTimeToUpgrade();
-        if (timeToUpgrade != null) {
-            starfruilObject.put("timeToUpgrade", timeToUpgrade.format(formatter));
-        } else {
-            starfruilObject.put("timeToUpgrade", "not_upgrade");
+            LocalDateTime timeToUpgrade = starfruil.getTimeToUpgrade();
+            if (timeToUpgrade != null) {
+                starfruilObject.put("timeToUpgrade", timeToUpgrade.format(formatter));
+            } else {
+                starfruilObject.put("timeToUpgrade", "not_upgrade");
+            }
+
+            LocalDateTime plantedTime = starfruil.getPlantedTime();
+            if (plantedTime != null) {
+                starfruilObject.put("plantedTime", plantedTime.format(formatter));
+            } else {
+                starfruilObject.put("plantedTime", "not_planted");
+            }
+
+            starfruilData.add(starfruilObject);
         }
 
-        LocalDateTime plantedTime = starfruil.getPlantedTime();
-        if (plantedTime != null) {
-            starfruilObject.put("plantedTime", plantedTime.format(formatter));
-        } else {
-            starfruilObject.put("plantedTime", "not_planted");
+        JSONArray animalData = new JSONArray();
+        for (Animal animal : this.session.user.Animal) {
+            JSONObject animalObject = new JSONObject();
+            animalObject.put("id", animal.getId()); // id động vật
+            animalObject.put("health", animal.getHealth()); // máu (HP)
+            animalObject.put("bornTime", animal.getBornTime()); // Thời gian sinh
+            animalObject.put("growTime", animal.getGrowTime()); // Thời gian trưởng thành
+            animalObject.put("quantity", animal.getQuantity()); // Sản lượng (trứng, sữa...)
+            animalObject.put("harvestProgress", animal.getHarvestProgress()); // Tiến độ thu hoạch
+            animalObject.put("isAlive", animal.isAlive()); // Còn sống hay không
+            animalObject.put("isHungry", animal.isHungry()); // Đói hay không
+            animalObject.put("isSick", animal.isSick()); // Bị bệnh hay không
+            animalObject.put("isMature", animal.isMature()); // Đã trưởng thành chưa
+
+            animalData.add(animalObject);
         }
 
-        starfruilData.add(starfruilObject);
-    }
 
-JSONArray animalData = new JSONArray();
-for (Animal animal : this.session.user.Animal) {
-    JSONObject animalObject = new JSONObject();
-    animalObject.put("id", animal.getId()); // id động vật
-    animalObject.put("health", animal.getHealth()); // máu (HP)
-    animalObject.put("bornTime", animal.getBornTime()); // Thời gian sinh
-    animalObject.put("growTime", animal.getGrowTime()); // Thời gian trưởng thành
-    animalObject.put("quantity", animal.getQuantity()); // Sản lượng (trứng, sữa...)
-    animalObject.put("harvestProgress", animal.getHarvestProgress()); // Tiến độ thu hoạch
-    animalObject.put("isAlive", animal.isAlive()); // Còn sống hay không
-    animalObject.put("isHungry", animal.isHungry()); // Đói hay không
-    animalObject.put("isSick", animal.isSick()); // Bị bệnh hay không
-    animalObject.put("isMature", animal.isMature()); // Đã trưởng thành chưa
+        JSONArray hatgiongData = new JSONArray();
+        for (HatGiong hatGiong : this.session.user.hatgiong) {
+            JSONObject hatGiongObject = new JSONObject();
+            hatGiongObject.put("id", hatGiong.getId());
+            hatGiongObject.put("soluong", hatGiong.getSoluong());
+            hatgiongData.add(hatGiongObject);
+        }
 
-    animalData.add(animalObject);
-}
+        JSONArray phanbonData = new JSONArray();
+        for (PhanBon phanBon : this.session.user.PhanBon) {
+            JSONObject phanBonObject = new JSONObject();
+            phanBonObject.put("id", phanBon.getId());
+            phanBonObject.put("soluong", phanBon.getSoluong());
+            phanbonData.add(phanBonObject);
+        }
 
+        JSONArray nongsanData = new JSONArray();
+        for (NongSan nongSan : this.session.user.NongSan) {
+            JSONObject nongSanObject = new JSONObject();
+            nongSanObject.put("id", nongSan.getId());
+            nongSanObject.put("soluong", nongSan.getSoluong());
+            nongsanData.add(nongSanObject);
+        }
 
-    JSONArray hatgiongData = new JSONArray();
-    for (HatGiong hatGiong : this.session.user.hatgiong) {
-        JSONObject hatGiongObject = new JSONObject();
-        hatGiongObject.put("id", hatGiong.getId());
-        hatGiongObject.put("soluong", hatGiong.getSoluong());
-        hatgiongData.add(hatGiongObject);
-    }
+        JSONArray nongsandacbietData = new JSONArray();
+        for (NongSanDacBiet nongsandacbiet : this.session.user.NongSanDacBiet) {
+            JSONObject nongsandacbietObject = new JSONObject();
+            nongsandacbietObject.put("id", nongsandacbiet.getId());
+            nongsandacbietObject.put("soluong", nongsandacbiet.getSoluong());
+            nongsandacbietData.add(nongsandacbietObject);
+        }
 
-    JSONArray phanbonData = new JSONArray();
-    for (PhanBon phanBon : this.session.user.PhanBon) {
-        JSONObject phanBonObject = new JSONObject();
-        phanBonObject.put("id", phanBon.getId());
-        phanBonObject.put("soluong", phanBon.getSoluong());
-        phanbonData.add(phanBonObject);
-    }
+        JSONArray cookingData = new JSONArray();
+        for (Cooking cooking : this.session.user.Cooking) {
+            JSONObject cookingObject = new JSONObject();
+            cookingObject.put("id", cooking.getId()); // id mon an
+            cookingObject.put("time", cooking.getTime()); // thoi gian chin
 
-    JSONArray nongsanData = new JSONArray();
-    for (NongSan nongSan : this.session.user.NongSan) {
-        JSONObject nongSanObject = new JSONObject();
-        nongSanObject.put("id", nongSan.getId());
-        nongSanObject.put("soluong", nongSan.getSoluong());
-        nongsanData.add(nongSanObject);
-    }
+            cookingData.add(cookingObject);
+        }
 
-    JSONArray nongsandacbietData = new JSONArray();
-    for (NongSanDacBiet nongsandacbiet : this.session.user.NongSanDacBiet) {
-        JSONObject nongsandacbietObject = new JSONObject();
-        nongsandacbietObject.put("id", nongsandacbiet.getId());
-        nongsandacbietObject.put("soluong", nongsandacbiet.getSoluong());
-        nongsandacbietData.add(nongsandacbietObject);
-    }
-    
-    JSONArray cookingData = new JSONArray();
-for (Cooking cooking : this.session.user.Cooking) {
-    JSONObject cookingObject = new JSONObject();
-    cookingObject.put("id", cooking.getId()); // id mon an
-    cookingObject.put("time", cooking.getTime()); // thoi gian chin
+        // Cập nhật cơ sở dữ liệu với dữ liệu đã tạo
+        String query = "INSERT INTO `farm_data` (user_id, land_data, starfruil_data, animal_data, hatgiong, phanbon, nongsan, nongsandacbiet, cooking_data, fish, animal) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) " +
+                "ON DUPLICATE KEY UPDATE land_data = ?, starfruil_data = ?, animal_data = ?, hatgiong = ?, phanbon = ?, nongsan = ?, nongsandacbiet = ?, cooking_data = ?, fish = ?, animal = ?";
+        try (Connection connection = DbManager.getInstance().getConnection();
+             PreparedStatement ps = connection.prepareStatement(query)) {
 
-    cookingData.add(cookingObject);
-}
+            // Chuyển đổi dữ liệu thành chuỗi JSON
+            String landDataString = landData.toString();
+            String starfruilDataString = starfruilData.toString();
+            String animalDataString = animalData.toString();
+            String hatgiongDataString = hatgiongData.toString();
+            String phanbonDataString = phanbonData.toString();
+            String nongsanDataString = nongsanData.toString();
+            String nongsandacbietDataString = nongsandacbietData.toString();
+            String cookingDataString = cookingData.toString();
 
-    // Cập nhật cơ sở dữ liệu với dữ liệu đã tạo
-    String query = "INSERT INTO `farm_data` (user_id, land_data, starfruil_data, animal_data, hatgiong, phanbon, nongsan, nongsandacbiet, cooking_data, fish, animal) " +
-            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) " +
-            "ON DUPLICATE KEY UPDATE land_data = ?, starfruil_data = ?, animal_data = ?, hatgiong = ?, phanbon = ?, nongsan = ?, nongsandacbiet = ?, cooking_data = ?, fish = ?, animal = ?";
-    try (Connection connection = DbManager.getInstance().getConnection();
-         PreparedStatement ps = connection.prepareStatement(query)) {
-
-        // Chuyển đổi dữ liệu thành chuỗi JSON
-        String landDataString = landData.toString();
-        String starfruilDataString = starfruilData.toString();
-        String animalDataString = animalData.toString();
-        String hatgiongDataString = hatgiongData.toString();
-        String phanbonDataString = phanbonData.toString();
-        String nongsanDataString = nongsanData.toString();
-        String nongsandacbietDataString = nongsandacbietData.toString();
-        String cookingDataString = cookingData.toString();
-
-        // Cập nhật hoặc thêm mới dữ liệu vào bảng `farm_data`
-       ps.setInt(1, userId);
-ps.setString(2, landDataString);
-ps.setString(3, starfruilDataString);
-ps.setString(4, animalDataString);
-ps.setString(5, hatgiongDataString);
-ps.setString(6, phanbonDataString);
-ps.setString(7, nongsanDataString);
-ps.setString(8, nongsandacbietDataString);
-ps.setString(9, cookingDataString);
-ps.setInt(10, this.lvfish);
-ps.setInt(11, this.lvanimal);
+            // Cập nhật hoặc thêm mới dữ liệu vào bảng `farm_data`
+            ps.setInt(1, userId);
+            ps.setString(2, landDataString);
+            ps.setString(3, starfruilDataString);
+            ps.setString(4, animalDataString);
+            ps.setString(5, hatgiongDataString);
+            ps.setString(6, phanbonDataString);
+            ps.setString(7, nongsanDataString);
+            ps.setString(8, nongsandacbietDataString);
+            ps.setString(9, cookingDataString);
+            ps.setInt(10, this.lvfish);
+            ps.setInt(11, this.lvanimal);
 // Thêm 9 tham số cho phần "ON DUPLICATE KEY UPDATE"
-ps.setString(12, landDataString);
-ps.setString(13, starfruilDataString);
-ps.setString(14, animalDataString);
-ps.setString(15, hatgiongDataString);
-ps.setString(16, phanbonDataString);
-ps.setString(17, nongsanDataString);
-ps.setString(18, nongsandacbietDataString);
-ps.setString(19, cookingDataString);
-ps.setInt(20, this.lvfish);
-ps.setInt(21, this.lvanimal);
-ps.executeUpdate();
+            ps.setString(12, landDataString);
+            ps.setString(13, starfruilDataString);
+            ps.setString(14, animalDataString);
+            ps.setString(15, hatgiongDataString);
+            ps.setString(16, phanbonDataString);
+            ps.setString(17, nongsanDataString);
+            ps.setString(18, nongsandacbietDataString);
+            ps.setString(19, cookingDataString);
+            ps.setInt(20, this.lvfish);
+            ps.setInt(21, this.lvanimal);
+            ps.executeUpdate();
 
-        ps.executeUpdate();
+            ps.executeUpdate();
+        }
     }
-}
 
     public void loadFarmData(int userId) throws SQLException {
 
@@ -855,33 +865,33 @@ ps.executeUpdate();
                     String nongsanDataString = res.getString("nongsan");
                     String nongsandacbietDataString = res.getString("nongsandacbiet");
                     String cookingDataString = res.getString("cooking_data");
-                    
+
                     // Phân tích dữ liệu cây khế (starfruil_data)
-List<Starfruil> starfruilList = new ArrayList<>();
+                    List<Starfruil> starfruilList = new ArrayList<>();
 // Đảm bảo rằng starfruilDataString là một mảng JSON (JSONArray), không phải đối tượng JSON (JSONObject)
-if (starfruilDataString != null && !starfruilDataString.isEmpty()) {
-    // Đọc mảng JSON
-    JSONArray starfruilArray = (JSONArray) JSONValue.parse(starfruilDataString);
+                    if (starfruilDataString != null && !starfruilDataString.isEmpty()) {
+                        // Đọc mảng JSON
+                        JSONArray starfruilArray = (JSONArray) JSONValue.parse(starfruilDataString);
 
-    for (Object obj : starfruilArray) {
-        JSONObject starfruilObj = (JSONObject) obj;
-        int level = ((Long) starfruilObj.get("level")).intValue();
-        int quantity = ((Long) starfruilObj.get("quantity")).intValue();
-        int timeToHarvest = ((Long) starfruilObj.get("timeToHarvest")).intValue();
-        //int timeToUpgrade = ((Long) starfruilObj.get("timeToUpgrade")).intValue();
-        String timeToUpgradeStr = (String) starfruilObj.get("timeToUpgrade");
-        String plantedTimeStr = (String) starfruilObj.get("plantedTime");       
-        LocalDateTime timeToUpgrade = LocalDateTime.parse(timeToUpgradeStr, DateTimeFormatter.ISO_LOCAL_DATE_TIME);
-        LocalDateTime plantedTime = LocalDateTime.parse(plantedTimeStr, DateTimeFormatter.ISO_LOCAL_DATE_TIME);
+                        for (Object obj : starfruilArray) {
+                            JSONObject starfruilObj = (JSONObject) obj;
+                            int level = ((Long) starfruilObj.get("level")).intValue();
+                            int quantity = ((Long) starfruilObj.get("quantity")).intValue();
+                            int timeToHarvest = ((Long) starfruilObj.get("timeToHarvest")).intValue();
+                            //int timeToUpgrade = ((Long) starfruilObj.get("timeToUpgrade")).intValue();
+                            String timeToUpgradeStr = (String) starfruilObj.get("timeToUpgrade");
+                            String plantedTimeStr = (String) starfruilObj.get("plantedTime");
+                            LocalDateTime timeToUpgrade = LocalDateTime.parse(timeToUpgradeStr, DateTimeFormatter.ISO_LOCAL_DATE_TIME);
+                            LocalDateTime plantedTime = LocalDateTime.parse(plantedTimeStr, DateTimeFormatter.ISO_LOCAL_DATE_TIME);
 
-        // Khởi tạo đối tượng Starfruil
-        starfruilList.add(new Starfruil(level, quantity, timeToHarvest, timeToUpgrade, plantedTime));
-    }
-}
+                            // Khởi tạo đối tượng Starfruil
+                            starfruilList.add(new Starfruil(level, quantity, timeToHarvest, timeToUpgrade, plantedTime));
+                        }
+                    }
 
 
 // Cập nhật danh sách cây khế cho người chơi
-this.session.user.starfruil = starfruilList;  // Cập nhật danh sách cây khế
+                    this.session.user.starfruil = starfruilList;  // Cập nhật danh sách cây khế
 
 
 
@@ -910,37 +920,37 @@ this.session.user.starfruil = starfruilList;  // Cập nhật danh sách cây kh
                     }
                     // Cập nhật danh sách ô đất cho người chơi
                     this.session.user.landItems = landItems;
-                    
+
 
 // Phân tích dữ liệu vật nuôi (animal_data)
-JSONArray animalData = (JSONArray) JSONValue.parse(animalDataString);
-List<Animal> animals = new ArrayList<>();
+                    JSONArray animalData = (JSONArray) JSONValue.parse(animalDataString);
+                    List<Animal> animals = new ArrayList<>();
 
-for (Object animal : animalData) {
-    JSONObject obj = (JSONObject) animal;
-    
-    // Lấy dữ liệu từ JSON
-    int id = ((Long) obj.get("id")).intValue();
-    int health = ((Long) obj.get("health")).intValue();
-    long bornTime = ((Long) obj.get("bornTime")).longValue(); // Thời gian sinh
-    int growTime = ((Long) obj.get("growTime")).intValue(); // Thời gian trưởng thành
-    int quantity = ((Long) obj.get("quantity")).intValue(); // Sản lượng (trứng, sữa...)
-    int harvestProgress = ((Long) obj.get("harvestProgress")).intValue(); // Tiến độ thu hoạch
-    
-    boolean isAlive = (Boolean) obj.get("isAlive");
-    boolean isHungry = (Boolean) obj.get("isHungry"); // Đói hay không
-    boolean isSick = (Boolean) obj.get("isSick"); // Bị bệnh hay không
-    boolean isMature = (Boolean) obj.get("isMature"); // Đã trưởng thành hay chưa
+                    for (Object animal : animalData) {
+                        JSONObject obj = (JSONObject) animal;
 
-    // Tạo đối tượng Animal mới với các giá trị đã lấy từ JSON
-    Animal animalObj = new Animal(id, bornTime, growTime, health, harvestProgress, quantity, isAlive, isHungry, isSick);
+                        // Lấy dữ liệu từ JSON
+                        int id = ((Long) obj.get("id")).intValue();
+                        int health = ((Long) obj.get("health")).intValue();
+                        long bornTime = ((Long) obj.get("bornTime")).longValue(); // Thời gian sinh
+                        int growTime = ((Long) obj.get("growTime")).intValue(); // Thời gian trưởng thành
+                        int quantity = ((Long) obj.get("quantity")).intValue(); // Sản lượng (trứng, sữa...)
+                        int harvestProgress = ((Long) obj.get("harvestProgress")).intValue(); // Tiến độ thu hoạch
 
-    // Thêm vào danh sách động vật
-    animals.add(animalObj);
-}
+                        boolean isAlive = (Boolean) obj.get("isAlive");
+                        boolean isHungry = (Boolean) obj.get("isHungry"); // Đói hay không
+                        boolean isSick = (Boolean) obj.get("isSick"); // Bị bệnh hay không
+                        boolean isMature = (Boolean) obj.get("isMature"); // Đã trưởng thành hay chưa
+
+                        // Tạo đối tượng Animal mới với các giá trị đã lấy từ JSON
+                        Animal animalObj = new Animal(id, bornTime, growTime, health, harvestProgress, quantity, isAlive, isHungry, isSick);
+
+                        // Thêm vào danh sách động vật
+                        animals.add(animalObj);
+                    }
 
 // Cập nhật danh sách vật nuôi cho người chơi
-this.session.user.Animal = animals;
+                    this.session.user.Animal = animals;
 
 
 
@@ -1000,7 +1010,7 @@ this.session.user.Animal = animals;
                         nongSandbs.add(nsdb);
                     }
                     this.session.user.NongSanDacBiet = nongSandbs;
-                    
+
                     JSONArray cookingdata = (JSONArray) JSONValue.parse(cookingDataString);
                     List<Cooking> cookings = new ArrayList<>();
 
@@ -1013,11 +1023,11 @@ this.session.user.Animal = animals;
                         cookings.add(ck);
                     }
                     this.session.user.Cooking = cookings;
-                this.lvfish = res.getInt("fish");
-                this.lvanimal = res.getInt("animal");
+                    this.lvfish = res.getInt("fish");
+                    this.lvanimal = res.getInt("animal");
                 }
 
-            }        
+            }
         }
 
         // Nếu không có dữ liệu, tạo mặc định cho người chơi
@@ -1029,12 +1039,12 @@ this.session.user.Animal = animals;
             }
             this.session.user.landItems = defaultLandItems;
         }
-        
+
         if (this.session.user.starfruil == null || this.session.user.starfruil.isEmpty()) {
-    this.session.user.starfruil = new ArrayList<>(); // Nếu starfruil là null, khởi tạo nó
-    // Thêm cây khế mặc định vào danh sách
-    this.session.user.starfruil.add(new Starfruil(1, 10, -1, LocalDateTime.now(), LocalDateTime.now()));
-}
+            this.session.user.starfruil = new ArrayList<>(); // Nếu starfruil là null, khởi tạo nó
+            // Thêm cây khế mặc định vào danh sách
+            this.session.user.starfruil.add(new Starfruil(1, 10, -1, LocalDateTime.now(), LocalDateTime.now()));
+        }
 
         if (this.session.user.Animal.isEmpty()) {
             // Không có vật nuôi, nên không cần thêm gì
@@ -1406,7 +1416,7 @@ this.session.user.Animal = animals;
         //listCmdRotate.add(new Command((short) 23, "Đổi Skill", 355, (byte) 0));
         //listCmdRotate.add(new Command((short) 36, "Hẹn hò", 1096, (byte) 1));
         if(this.getRole() >= 9) {
-          listCmdRotate.add(new Command((short) 51, "Rương Admin", 1150, (byte) 0));  
+            listCmdRotate.add(new Command((short) 51, "Rương Admin", 1150, (byte) 0));
         }
         listCmdRotate.add(new Command((short) 50, "Đào khoáng sản", 1404, (byte) 0));
     }
@@ -1427,9 +1437,9 @@ this.session.user.Animal = animals;
                     //DayOfWeek dayOfWeek = LocalDate.now().getDayOfWeek();
                     //int dayIndex = dayOfWeek.getValue(); // 1 = Monday, 7 = Sunday
                     //if (dayIndex == 5 || dayIndex == 6) {
-                        getMapService().doAction(id, idTo, action);
-                        break;
-                    //}
+                    getMapService().doAction(id, idTo, action);
+                    break;
+                //}
 //                    if(gender== us.gender) {
 //                        this.getAvatarService().serverDialog("làm gì vậy bro, đồng giới thì thứ 6 thứ 7");
 //                        break;
@@ -1437,16 +1447,16 @@ this.session.user.Animal = animals;
                 case 102: {
                     us.getZone().getPlayers().forEach(u -> {
                         EffectService.createEffect()
-                            .session(u.session)
-                            .id((byte) 56)
-                            .style((byte) 0)
-                            .loopLimit((byte) 5)
-                            .loop((short) 100)
-                            .loopType((byte) 1)
-                            .radius((short) 250)
-                            .idPlayer(us.getId())
-                            .send();
-                                            });
+                                .session(u.session)
+                                .id((byte) 56)
+                                .style((byte) 0)
+                                .loopLimit((byte) 5)
+                                .loop((short) 100)
+                                .loopType((byte) 1)
+                                .radius((short) 250)
+                                .idPlayer(us.getId())
+                                .send();
+                    });
                     break;
                 }
                 default:
@@ -1636,7 +1646,7 @@ this.session.user.Animal = animals;
                 }
             } else {
                 // Nếu không tồn tại trong chests, tìm trong wearing
-               // itm = findItemInWearing(item.getId());
+                // itm = findItemInWearing(item.getId());
 
                 if (itm != null) {
                     // Cập nhật độ tin cậy của item trong wearing nếu tìm thấy
@@ -1931,7 +1941,7 @@ this.session.user.Animal = animals;
 //                    removeItemFromWearing(item);
 //                    addItemToChests(item);
 //                    getMapService().usingPart(id, itemID);
-                      getService().serverDialog("error 0020");//Vật phẩm shop Loi, sẽ sớm fix
+                    getService().serverDialog("error 0020");//Vật phẩm shop Loi, sẽ sớm fix
                 }
             } else {
                 Item item = findItemInWearing(itemID);

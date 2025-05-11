@@ -266,20 +266,11 @@ public class GlobalHandler {
 
                             Thread.sleep(30_000);
 
-                            // Disconnect user game
-                            List<Integer> ids = new ArrayList<>();
-                            for (User us : lst) {
-                                ids.add(us.getId());
-                            }
 
-                            for (Integer id : ids) {
-                                try {
-                                    UserManager.getInstance().find(id).session.close();
-                                } catch (Exception e) {
-                                    // Ghi log nếu cần
-                                    e.printStackTrace();
-                                }
-                            }
+                            lst.forEach(user -> {
+                                UserManager.getInstance().find(user.getId()).session.close();
+                            });
+
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
@@ -347,7 +338,7 @@ public class GlobalHandler {
                     String[] idAndName = text.split(" ");  // Tách phần trước và sau dấu cách
                     String xu = idAndName[0];          // Phần chứa id
                     String usernamePart = idAndName[1];    // Phần chứa username
-                    // Chuyển đổi id từ chuỗi sang số ngắn (short)
+                    // Chuyển đổi id từ chuỗi sang số ngắn (short)`
                     long xuup = Long.parseLong(xu);
                     // In kết quả
                     System.out.println("Username: " + usernamePart);

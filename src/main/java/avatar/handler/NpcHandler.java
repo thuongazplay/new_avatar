@@ -166,7 +166,10 @@ public class NpcHandler {
                 return;
             }
             if (boss.isDefeated()) {
-                us.getAvatarService().serverDialog("boss đã chết");
+//                us.getAvatarService().serverDialog("boss đã chết");
+//                return;
+                // Xóa boss khỏi zone
+                boss.getZone().leave(boss);
                 return;
             }
             if (distance > maxDistance) {
@@ -187,7 +190,7 @@ public class NpcHandler {
                 System.out.println("Hàm không được kích hoạt ngoài khoảng thời gian từ 6h sáng đến 11h đêm.");
             }
             us.updateXu(+us.getDameToXu());
-            us.updateLuong(+10);
+//            us.updateLuong(0);
             us.getAvatarService().updateMoney(0);
 
             List<User> lstUs = us.getZone().getPlayers();
@@ -391,7 +394,8 @@ public class NpcHandler {
                     us.getAvatarService().openMenuOption(npcId, 0, menu);
                     break;
                 }
-                
+
+
                 case NpcName.PHI_HANH_GIA: {
                     List<Menu> menu = new ArrayList<>();
                         Menu phg = Menu.builder().name("Mua đá vũ trụ").action(() -> {
@@ -407,9 +411,8 @@ public class NpcHandler {
                 case NpcName.NHAN_AI: {
                     List<Menu> menu = new ArrayList<>();
                     menu.add(Menu.builder().name("Mua trái tim").action(() -> {
-                        ShopNpcHandler.displayUI(us, PHI_HANH_GIA, 2806,2807,2808,2809,2810,3129,3130,3131,3132,3133,5144,5145,5146,5147,5148);
-                    }).build());
-                    menu.add(Menu.builder().name("Nâng cấp trái tim").action(() -> {
+                        ShopTradeHandler.displayUI(us,0, 1214,5100);
+
                         
                     }).build());
                     menu.add(Menu.builder().name("Thoát").id(npcId).build());
@@ -417,7 +420,42 @@ public class NpcHandler {
                     us.getAvatarService().openMenuOption(npcId, 0, menu);
                     break;
                 }
-                
+
+//                taskNpc: đổi vật phẩm dùng gì đổi, viết các điều kiện
+                case PHU_THUY: {
+
+
+                    List<Menu> menu = new ArrayList<>();
+
+                    menu.add(Menu.builder().name("Shop sen ngũ sắc").action(() -> { //5389 : sen ngũ sắc
+                        ShopTradeHandler.displayUI(us, 3, 1214, 4442 );
+                    }).build());
+
+                    menu.add(Menu.builder().name("Shop thẻ vip").action(() -> {
+                        ShopTradeHandler.displayUI(us, 4,
+                                1214, 4280, 5620, 5621, 4276);
+                    }).build());
+
+                    menu.add(Menu.builder().name("Nâng cấp bằng đá ngũ sắc")
+                            .id(npcId)
+                            .menus(listItemUpgradeDNS(npcId, us, BossShopHandler.SELECT_DNS))
+                            .build());
+
+                    menu.add(
+
+
+                    Menu.builder().name("Nhập Giftcode").action(() -> {
+                        us.getAvatarService().sendTextBoxPopup(us.getId(), 20, "Giftcode:", 1);
+                    }).build());
+                    menu.add(Menu.builder().name("Thoát").id(npcId).build());
+
+                    us.setMenus(menu);
+                    us.getAvatarService().openMenuOption(npcId, 0, menu);
+                    break;
+                }
+
+
+
                 case NpcName.THO_REN: {
                     List<Menu> menu = new ArrayList<>();
                         Menu phg = Menu.builder().name("Mua vật phẩm").action(() -> {
@@ -871,6 +909,8 @@ public class NpcHandler {
         );
     }
 
+
+
     public static List<Menu> listItemUpgrade(int npcId, User us, byte type) {
         //String npcName = "Thợ KH";
         //String npcChat = "Muốn đồ đang mặc đẹp hơn không? Ta có thể giúp bạn đấy";
@@ -1063,6 +1103,40 @@ public class NpcHandler {
                                 }).build()
                         ))
                         .build()
+        );
+    }
+    public static List<Menu> listItemUpgradeDNS(int npcId, User us, byte type) {
+        return List.of(
+                                Menu.builder().name("Vệ Long Lam Tinh").id(npcId)
+                                        .menus(List.of(
+                                                Menu.builder().name("Mũ Vệ Long Lam Tinh").action(() -> {
+                                                    BossShopHandler.displayUI(us, type, 20, 20, 5465, 20);
+                                                }).build(),
+                                                Menu.builder().name("áo Vệ Long Lam Tinh").action(() -> {
+                                                    BossShopHandler.displayUI(us, type, 20, 20, 5466, 20);
+                                                }).build(),
+                                                Menu.builder().name("Quần Vệ Long Lam Tinh").action(() -> {
+                                                    BossShopHandler.displayUI(us, type, 20, 20, 5467, 20);
+                                                }).build(),
+                                                Menu.builder().name("Cánh Vệ Long Lam Tinh").action(() -> {
+                                                    BossShopHandler.displayUI(us, type, 20, 20, 5468, 20);
+                                                }).build(),
+                                                Menu.builder().name("Thoát").id(npcId).build()
+                                        ))
+                                        .build(),
+                                Menu.builder().name("Super Saiyan Rose").id(npcId)
+                                        .menus(List.of(
+                                                Menu.builder().name("áo Super Saiyan Rose").action(() -> {
+                                                    BossShopHandler.displayUI(us, type, 50, 500, 4443, 20);
+                                                }).build(),
+                                                Menu.builder().name("Quần Super Saiyan Rose").action(() -> {
+                                                    BossShopHandler.displayUI(us, type, 50, 500, 4444, 20);
+                                                }).build(),
+                                                Menu.builder().name("Thoát").id(npcId).build()
+                                        ))
+                                        .build(),
+                                Menu.builder().name("Thoát").id(npcId).build()
+
         );
     }
 

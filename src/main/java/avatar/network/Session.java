@@ -490,7 +490,10 @@ public class Session implements ISession {
                 return;
             }
             isCharCreatedPopup = true;
-            DbManager.getInstance().executeUpdate("INSERT INTO `players`(`user_id`, `level_main`, `gender`, `scores`) VALUES (?, ?, ?,?);", user.getId(), 1, 0,0);
+            DbManager.getInstance().executeUpdate(
+                    "INSERT INTO `players`(`user_id`, `level_main`, `gender`, `scores`, `chests`, `wearing`, `chests_home`) VALUES (?, ?, ?, ?, ?, ?, ?);",
+                    user.getId(), 1, 0, 0, "[]", "[]", "[]"
+            );
             enter();
         }
     }

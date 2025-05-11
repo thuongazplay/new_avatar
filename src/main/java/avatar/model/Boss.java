@@ -16,12 +16,10 @@ import java.net.Socket;
 import java.security.SecureRandom;
 import java.time.LocalTime;
 import java.util.*;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 import java.util.List;
 import java.util.Arrays;
+import java.util.stream.Collectors;
 
 import avatar.network.Session;
 import avatar.play.MapManager;
@@ -50,10 +48,8 @@ public class Boss extends User {
 
         //tọa độ boss dichuyeeren
         List<int[]> map11 = Arrays.asList(
-                new int[]{182, 121},
-                new int[]{282, 142},
-                new int[]{282, 88},
-                new int[]{326, 150}
+                new int[]{319, 106},
+                new int[]{779, 114}
         );
         zoneCoordinates.put(11, map11);
         List<int[]> map7 = Arrays.asList(
@@ -118,6 +114,16 @@ public class Boss extends User {
     private static final SecureRandom RANDOM = new SecureRandom();
 
     private final ScheduledExecutorService scheduler1 = Executors.newSingleThreadScheduledExecutor();
+    // Tạo cấu trúc dữ liệu để quản lý boss requirements
+    private static final Map<Integer, Integer> BOSS_REQUIREMENTS = new HashMap<>() {{
+        put(1, 1);
+        put(2, 1);
+        put(3, 1);
+        put(5, 1);
+        put(7, 1);
+        put(8, 1);
+        put(11, 1);
+    }};
 
     private void autoChatBot() {
         Runnable autoChatTask = () -> {
@@ -269,79 +275,132 @@ public class Boss extends User {
 
 
     public synchronized void handleBossDefeat(Boss boss, User us) throws IOException {
-        //update lượt boss.
-        us.applyStoredXuUpdate();
-        DbManager.getInstance().executeUpdate("UPDATE `players` SET `xu_from_boss` = ? WHERE `user_id` = ? LIMIT 1;",
-                us.xu_from_boss, us.getId());
+        // Cộng 100 lượng
+        us.updateLuong(100);
+
+        // Log xu nhận được (giữ nguyên, dù không có updateXu)
+        System.out.println("Người chơi [" + us.getUsername() + "] nhận được " + us.getStoredXuUpdate() + " xu từ boss!");
+
+//        DbManager.getInstance().executeUpdate("UPDATE `players` SET `xu_from_boss` = ? WHERE `user_id` = ? LIMIT 1;",
+//                us.xu_from_boss, us.getId());
+
+        DbManager.getInstance().executeUpdate(
+                "UPDATE `players` SET `xu_from_boss` = `xu_from_boss` + 1 WHERE `user_id` = ? LIMIT 1;",
+                us.getId()
+        );
+
+        System.out.println(" user : "+us.getId() +" được cộng 1 xu_from_boss");
+        // Thêm phần thưởng ngẫu nhiên: sen ngũ sắc (ID 5389) hoặc đá ngũ sắc (ID 3672)
+        Random random = new Random();
+        int chance = random.nextInt(100); // Số ngẫu nhiên từ 0-99
+        int newItemId;
+        String newItemName;
+
+        // Kiểm tra chỗ trống trong rương
+        if (us.chests.size() < us.getChestSlot()) {
+            // Xác suất 40% nhận sen ngũ sắc, 60% nhận đá ngũ sắc
+            if (chance < 40) {
+                newItemId = 5389; // Sen ngũ sắc
+                newItemName = "Sen Ngũ Sắc";
+            } else {
+                newItemId = 3672; // Đá ngũ sắc
+                newItemName = "Đá Ngũ Sắc";
+            }
+
+            // Thêm item mới vào rương
+            Item newItem = new Item(newItemId, -1, 1); // Số lượng 1, vĩnh viễn
+            us.addItemToChests(newItem);
+            System.out.println(" Người chơi [" + us.getUsername() + "] nhận được 1 " + newItemName);
+            us.getAvatarService().SendTabmsg("Bạn vừa tiêu diệt " + boss.getUsername() + ": nhận 100 lượng và 1 " + newItemName + ".");
+        } else {
+            System.out.println("Người chơi [" + us.getUsername() + "] rương đầy, không nhận được item ngẫu nhiên!");
+            us.getAvatarService().SendTabmsg("Bạn vừa tiêu diệt " + boss.getUsername() + ": nhận 100 lượng. Rương đầy, không nhận được item!");
+        }
+
+
+
+        // Thông báo boss bị tiêu diệt
         String username = us.getUsername();
-        int idItems = 5578;
-        Item keoAcMa = new Item(idItems,-1,1);
-        if(us.findItemInChests(idItems) !=null){
-            int quantity = us.findItemInChests(idItems).getQuantity();
-            us.findItemInChests(idItems).setQuantity(quantity+1);
-        }else {
-            us.addItemToChests(keoAcMa);
-        }
-        us.getAvatarService().SendTabmsg("Bạn vừa nhận được 1 "+ " " + keoAcMa.getPart().getName());
-
-        if(us.getHopquatuboss() <= 50){
-
-            us.updatehopquatuboss(+1);//+1 cho slot 100 hop
-            addqua(us);
-        }
-
         String message = String.format("Khá lắm bạn %s đã kill được %s", username, boss.getUsername().substring(3, boss.getUsername().length() - 6));
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        List<String> newMessages = Arrays.asList(message,"ta sẽ hủy diệt thành phố này");
+        List<String> newMessages = Arrays.asList(message, "ta sẽ hủy diệt thành phố này");
         this.textChats = new ArrayList<>(newMessages);
         for (String chatMessage : textChats) {
             getMapService().chat(boss, chatMessage);
             textChats.remove(chatMessage);
         }
-        Zone khuqua = boss.getZone();
+
+//        // Xử lý tạo quà xung quanh boss
+//        Zone khuqua = boss.getZone();
+//        scheduler.schedule(() -> {
+//            try {
+//                LocalTime now = LocalTime.now();
+//                LocalTime tenAM = LocalTime.of(10, 0);
+//                LocalTime twoPM = LocalTime.of(14, 0);
+//                LocalTime sevenPM = LocalTime.of(17, 0);
+//                LocalTime elevenPM = LocalTime.of(23, 0);
+//
+//                if ((now.isAfter(tenAM) && now.isBefore(twoPM)) || (now.isAfter(sevenPM) && now.isBefore(elevenPM))) {
+//                    createNearbyGiftBoxes(boss, khuqua, boss.getX(), boss.getY(), Boss.currentBossId + 10000);
+//                }
+//            } catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
+//        }, 5, TimeUnit.SECONDS);
+
+        // Lấy zone và danh sách người chơi TRƯỚC KHI xóa boss
+        Zone currentZone = boss.getZone();
+
+        List<User> players = new ArrayList<>(currentZone.getPlayers());
+
+        // Xóa boss khỏi map ngay lập tức
+        boss.getZone().leave(boss);
+        boss.session.close();
+
+
+        // Thông báo cho tất cả người chơi trong khu vực
+        players.forEach(player -> {
+            if (player != null && player.session != null) {
+                player.getAvatarService().serverInfo("Ngưỡng mộ quá.Người chơi " + us.getUsername() + "đã hạ gục boss !!!");
+            }
+        });
+
+        // Lên lịch hồi sinh boss sau 20 giây
         scheduler.schedule(() -> {
             try {
-                LocalTime now = LocalTime.now();
-                LocalTime tenAM = LocalTime.of(10, 0);
-                LocalTime twoPM = LocalTime.of(14, 0);
-                LocalTime sevenPM = LocalTime.of(17, 0);
-                LocalTime elevenPM = LocalTime.of(23, 0);
+                // Tìm map thiếu boss
+                int mapIdToSpawn = findMapNeedingBoss();
 
-                //tạo qu trong time
-                if ((now.isAfter(tenAM) && now.isBefore(twoPM)) || (now.isAfter(sevenPM) && now.isBefore(elevenPM))) {
-                    createNearbyGiftBoxes(boss, khuqua, boss.getX(), boss.getY(), Boss.currentBossId + 10000);
+                if (mapIdToSpawn != -1) {
+                    // Lấy tọa độ ngẫu nhiên cho map đó
+                    List<int[]> coordinates = zoneCoordinates.get(mapIdToSpawn);
+                    int[] coordinate = coordinates.isEmpty() ?
+                            new int[]{100, 100} :
+                            coordinates.get(new Random().nextInt(coordinates.size()));
+                    int randomZoneId = ThreadLocalRandom.current().nextInt(0, 10); // [1, 10]
+                    spawnBossAt(mapIdToSpawn, randomZoneId, (short)coordinate[0], (short)coordinate[1],
+                            Utils.nextInt(500000, 1000000));
+                } else {
+                    System.out.println("Tất cả map đã có đủ boss!");
                 }
 
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+                // Thông báo cho tất cả người chơi
+                players.forEach(player -> {
+                    if (player != null && player.session != null) {
+                        player.getAvatarService().serverInfo("Boss đã hồi sinh, hãy săn đuổi nó !!!");
+                    }
+                });
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-        }, 5, TimeUnit.SECONDS); // 4 giây trễ trước khi thực hiện các hành động khác
+        }, 20, TimeUnit.MINUTES);
 
-        //boss.session.close();
-        Utils random = null;
-        avatar.play.Map m = MapManager.getInstance().find(boss.getBossMapId());
-        List<Zone> zones = m.getZones();
-        Zone randomZone = zones.get(random.nextInt(zones.size()));
-        boss.getZone().leave(boss);
-        addBossToZone(boss,boss.bossMapId,randomZone,(short) 0,(short) 0,Utils.nextInt(5000000,10000000));
-
-        boss.getZone().getPlayers().forEach(u -> {
-            EffectService.createEffect()
-                    .session(u.session)
-                    .id((byte) 45)
-                    .style((byte) 0)
-                    .loopLimit((byte) 6)
-                    .loop((short) 1) // Số lần lặp lại
-                    .loopType((byte) 1)
-                    .radius((short) 5)
-                    .idPlayer(boss.getId())
-                    .send();
-        });
     }
+
     // Gửi hiệu ứng cho người chơi trong khu vực
     public synchronized void hanlderNhatHopQua(User boss, User us) throws IOException {
         us.getAvatarService().serverDialog("bạn đã nhặt được hộp quà");
@@ -373,7 +432,7 @@ public class Boss extends User {
         assignRandomItemToBoss(boss);
         boss.setHP(hp);
         if(boss.getWearing().get(1).getId() == 5112){
-            boss.setHP(hp+90000);
+//            boss.setHP(hp+90000);
             List<String> chatMessages = Arrays.asList("gãi ngứa hả tên kia", "Mau nộp kẹo cho taaaa");
             ((Boss) boss).setTextChats(chatMessages);
         }
@@ -394,12 +453,31 @@ public class Boss extends User {
     }
 
 
+    //    private void MoveArea(User boss) throws IOException {
+//        ByteArrayOutputStream joinPank = new ByteArrayOutputStream();
+//        try (DataOutputStream dos2 = new DataOutputStream(joinPank)) {
+//            dos2.writeByte(boss.bossMapId);
+//            System.err.println("joinmaopboss " + boss.bossMapId);
+//            dos2.writeByte(Utils.nextInt(9));
+//            dos2.writeShort(boss.getX());//x
+//            dos2.writeShort(boss.getY());//y
+//            dos2.flush();
+//            byte[] dataJoinPak = joinPank.toByteArray();
+//            ParkMsgHandler parkMsgHandler1 = new ParkMsgHandler(boss.session);
+//            parkMsgHandler1.onMessage(new Message(Cmd.AVATAR_JOIN_PARK, dataJoinPak));
+//        }
+//        System.out.println("add boss khu :" + boss.getZone().getId());
+//
+//    }
     private void MoveArea(User boss) throws IOException {
         ByteArrayOutputStream joinPank = new ByteArrayOutputStream();
         try (DataOutputStream dos2 = new DataOutputStream(joinPank)) {
             dos2.writeByte(boss.bossMapId);
             System.err.println("joinmaopboss " + boss.bossMapId);
-            dos2.writeByte(Utils.nextInt(9));
+            int randomZoneId = ThreadLocalRandom.current().nextInt(0, 10); // [1, 10]
+            dos2.writeByte(randomZoneId); // Thay vì random, fix cứng khu 0
+
+//            dos2.writeByte(0); // Thay vì random, fix cứng khu 0
             dos2.writeShort(boss.getX());//x
             dos2.writeShort(boss.getY());//y
             dos2.flush();
@@ -408,7 +486,6 @@ public class Boss extends User {
             parkMsgHandler1.onMessage(new Message(Cmd.AVATAR_JOIN_PARK, dataJoinPak));
         }
         System.out.println("add boss khu :" + boss.getZone().getId());
-
     }
 
     private User createBoss(short x, short y,int id) {
@@ -447,30 +524,26 @@ public class Boss extends User {
 
     //đồ của boss
     private void assignRandomItemToBoss(User boss) {
-        List<Integer> itemIds = Arrays.asList(0,5112, 2469, 2470,6428,6431,4304);//sen bo hung
-        List<Integer> itemIds1 = Arrays.asList(0,2468, 2469, 2470,2282,4304);//ma bu
-        List<Integer> itemIds2 = Arrays.asList(0,8,2471, 2472, 2473,3495,4304);//ma bu map
-        List<Integer> itemIds3 = Arrays.asList(10, 2049, 2050, 2051);
-        List<Integer> itemIds4 = Arrays.asList(10, 2099, 2100, 2101);
-        List<Integer> itemIds5 = Arrays.asList(10, 6036, 6037, 6038);
-
-
-        List<Integer> itemIds6 = Arrays.asList(10, 2049, 2050, 2051);
-        List<Integer> itemIds7 = Arrays.asList(10, 2099, 2100, 2101);
+        List<Integer> itemIds1 = Arrays.asList(0,8,4121, 4122, 4123,4128,4563);//xen bo hung
+        List<Integer> itemIds2 = Arrays.asList(0,8,6161, 6162, 6163,4128,4563);//ma bu
+        List<Integer> itemIds3 = Arrays.asList(0,8,6164, 6165, 6166,4561);// yasua
+        List<Integer> itemIds4 = Arrays.asList(0,8,4442, 4443, 4444,4562);// goku rose
+        List<Integer> itemIds5 = Arrays.asList(0,8,5409,5410,5411, 5412, 5413);// lufi
+        List<Integer> itemIds6 = Arrays.asList(0,8,7029,7030,7031, 7032, 7039);// ngáo bính
 
 
         Map<List<Integer>, String> itemListToName = new HashMap<>();
-        itemListToName.put(itemIds, "TrumMaBi");
-        itemListToName.put(itemIds1, "MaBi");
-        itemListToName.put(itemIds2, "Frankeinstein");
-        itemListToName.put(itemIds3, "XuongKho");
-        itemListToName.put(itemIds4, "XacUop");
-        itemListToName.put(itemIds5, "TrumXacUop");
+        itemListToName.put(itemIds1, "Xên bọ hung");
+        itemListToName.put(itemIds2, "MaBư");
+        itemListToName.put(itemIds3, "Yasua");
+        itemListToName.put(itemIds4, "Goku rose");
+        itemListToName.put(itemIds5, "Lufi");
+        itemListToName.put(itemIds6, "Ngáo Bính");
+//        itemListToName.put(itemIds7, "XuongKho");
+//        itemListToName.put(itemIds7, "XacUop");
 
-        itemListToName.put(itemIds6, "XuongKho");
-        itemListToName.put(itemIds7, "XacUop");
-
-        List<List<Integer>> allItemLists = Arrays.asList(itemIds,itemIds1,itemIds2,itemIds3,itemIds4,itemIds5,itemIds6,itemIds7);
+        List<List<Integer>> allItemLists = Arrays.asList(itemIds1,itemIds2,itemIds3,itemIds4,itemIds5,itemIds6);
+//        List<List<Integer>> allItemLists = Arrays.asList(itemIds);
         Random random = new Random();
         int randomIndex = random.nextInt(allItemLists.size());
         List<Integer> randomList = allItemLists.get(randomIndex);
@@ -656,6 +729,7 @@ public class Boss extends User {
         return sb.toString();
     }
 
+    //    boss thông thường0
     public static void spawnBossesForMap(int mapId, int numBosses) {
         Utils random = null;
         avatar.play.Map m = MapManager.getInstance().find(mapId);
@@ -666,7 +740,8 @@ public class Boss extends User {
             //((Boss) boss).setTextChats(chatMessages);
             boss.session = createSession(boss);
 
-            Zone randomZone = zones.get(random.nextInt(zones.size()));
+//            Zone randomZone = zones.get(random.nextInt(zones.size()));
+            Zone randomZone = zones.get(0);
             try {
                 boss.addBossToZone(boss,mapId,randomZone, (short) 50, (short) 50, (int) 50000);
                 System.out.println("Boss " + i + " khu " + randomZone.getId() + " map " + mapId);
@@ -675,7 +750,7 @@ public class Boss extends User {
             }
         }
     }
-    /// ////////////////// npc phát quà di chuyển
+    // boss phát quà + di chuyển
     public static void spawnBossesForMapPhatQua(int mapId, int numBosses) {
         Utils random = null;
         avatar.play.Map m = MapManager.getInstance().find(mapId);
@@ -683,10 +758,11 @@ public class Boss extends User {
         for (int i = 0; i < numBosses; i++) {
             Boss boss = new Boss(); // Tạo boss mới
             //List<String> chatMessages = Arrays.asList("YAAAA", "YOOOO");
-            //((Boss) boss).setTextChats(chatMessages);
+//            ((Boss) boss).setTextChats(chatMessages);
             boss.session = createSession(boss);
 
-            Zone randomZone = zones.get(random.nextInt(zones.size()));
+//            Zone randomZone = zones.get(random.nextInt(zones.size()));
+            Zone randomZone = zones.get(0);
             try {
                 boss.addBossToZonePhatQua(boss,mapId,randomZone, (short) 50, (short) 50, (int) 5000000);
                 System.out.println("Boss " + i + " khu " + randomZone.getId() + " map " + mapId);
@@ -695,6 +771,8 @@ public class Boss extends User {
             }
         }
     }
+
+//    1 boss chỉ định đặc biệt
 
     public void addBossToZonePhatQua(User boss,int Map ,Zone zone, short x, short y,int hp) throws IOException {
         if (bossCount >= TOTAL_BOSSES) {
@@ -793,4 +871,55 @@ public class Boss extends User {
             addBossToZonePhatQua(boss,boss.bossMapId,randomZone,(short) 0,(short) 0,1);
         }
     }
+    public static void spawnBossAt(int mapId, int zoneId, short x, short y, int hp) {
+        try {
+            Boss boss = new Boss();
+            boss.session = createSession(boss);
+            avatar.play.Map map = MapManager.getInstance().find(mapId);
+            Zone zone = map.getZoneById(zoneId);
+
+            if (zone == null) {
+                System.err.println("Không tìm thấy khu " + zoneId + " trong bản đồ " + mapId);
+                return;
+            }
+
+            boss.addBossToZone(boss, mapId, zone, x, y, hp);
+            System.out.println("Boss đã được tạo tại map " + mapId + " khu " + zoneId);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    // Tìm map thiếu boss một cách hiệu quả
+
+    public int findMapNeedingBoss() {
+        Map<Integer, Integer> currentBosses = countAllBosses();
+
+        return BOSS_REQUIREMENTS.entrySet().stream()
+                .filter(entry -> currentBosses.get(entry.getKey()) < entry.getValue())
+                .map(Map.Entry::getKey)
+                .findFirst()
+                .orElse(-1);
+    }
+    // Phương thức đếm tất cả boss trong một lần duyệt
+    public Map<Integer, Integer> countAllBosses() {
+        Map<Integer, Integer> bossCount = new HashMap<>();
+
+        // Khởi tạo với 0 cho tất cả map
+        BOSS_REQUIREMENTS.keySet().forEach(mapId -> bossCount.put(mapId, 0));
+
+        // Duyệt một lần qua tất cả các map
+        for (Integer mapId : BOSS_REQUIREMENTS.keySet()) {
+            avatar.play.Map map = MapManager.getInstance().find(mapId);
+            if (map != null) {
+                int count = map.getZones().stream()
+                        .flatMap(zone -> zone.getPlayers().stream())
+                        .filter(user -> user instanceof Boss)
+                        .mapToInt(boss -> 1)
+                        .sum();
+                bossCount.put(mapId, count);
+            }
+        }
+        return bossCount;
+    }
+
 }
